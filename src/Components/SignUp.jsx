@@ -1,0 +1,75 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userSlice';
+import { useNavigate } from 'react-router-dom';
+
+const SignUp = () => {
+  let [email,setEmail]=useState("manoj@gmail.com");
+  let [password,setPassword]=useState("Manoj@123");
+  let [firstName,setFirstName]=useState("");
+  let [lastName,setLastName]=useState("");
+  let [gender,setGender]=useState("");
+  let [error,setError]=useState();
+  let [showPassword,setShowPaassword]=useState(false);
+  let dispatch=useDispatch();
+  let navigate=useNavigate();
+
+
+  let handleSignUp=async ()=>{
+    setError("");
+    try{
+      const res= await axios.post("http://localhost:4000/signup",{
+        firstName,
+        lastName,
+        email,
+        password,
+        gender
+      },{withCredentials:true})
+      // console.log(res.data)
+      dispatch(addUser(res.data))
+      navigate("/devTinder/profile");
+    }
+    catch(err){
+      if(err.response.data.includes("Error E11000 duplicate key error")){
+      setError("Account already existed with this email.")
+      }
+      else{
+        setError(err.response.data)
+      }
+      console.error("Login failed:", err);
+    }
+  }
+  return (
+    <>
+      <div className='flex flex-col md:flex-row items-center justify-center mt-10 px-4' >
+        <img src="/images/ChatGPT Image Jun 29, 2025, 12_36_32 AM.png" alt=""  className='hidden md:block w-110 h-120 card_shadow_img '/>
+        <div className="card bg-base-300 w-110 w-[90%] sm:w-[400px]  flex flex-col justify-center card_shadow pl-3 pb-3 p-4">
+              <div className="card-body w-full m-auto">
+                <h1 className='font-bold text-xl mb-2'>Sign Up</h1>
+                <fieldset className="fieldset  w-full flex flex-col gap-4">
+                  <input type="email" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input w-full" placeholder="Enter your First Name" />
+                  <input type="email" value={lastName} onChange={(e) => setLastName(e.target.value)} className="input w-full" placeholder="Enter your Last Name" />   
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input w-full" placeholder="Enter your Email" />
+                  <div className='relative'>
+                  <input type={showPassword?"text":"password"} value={password} onChange={(e) => setPassword(e.target.value)} className="input w-full" placeholder="Enter your Password" />
+                     <i className={`fa-solid ${showPassword?"fa-eye":"fa-eye-slash"} absolute top-3 text-base -ml-7 cursor-pointer text-gray-400 `} onClick={()=>setShowPaassword((prev)=>!prev)}></i>
+                  </div>
+                  <select defaultValue="Select Your Gender" className="select w-full max-w-full outline-none cursor-pointer" onChange={(e)=>setGender(e.target.value)}>
+                    <option disabled>Select Your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+                  </select>
+                  {error && <p className="text-red-500 -my-2 pr-2 ">{error}</p>}
+                </fieldset>
+                <button className="btn font-bold login w-full sm:w-auto mt-2" onClick={handleSignUp}>Sign Up</button>
+                <p className='mt-1'>Already have an Account? <span className='underline font-bold text-blue-500 cursor-pointer' onClick={()=>navigate("/devTinder/login")}>Login</span></p>
+              </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default SignUp
