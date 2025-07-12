@@ -51,7 +51,9 @@ const PeopleProfile = () => {
               <img src={userData.photoUrl} alt="" className="rounded-full object-contain w-32 h-32"/>
             </div>
             <div className="text-center ">
-              <p className="text-[22px] font-bold  text_shadow name">{userData.firstName+" "+userData.lastName}</p>
+              <p className="text-[22px] font-bold  text_shadow name">{userData.firstName+" "+userData.lastName}
+                 {userData?.isPremium && <span className="inline-flex ml-3 bg-blue-500 rounded-full  p-1 relative -top-1"><i class="fa-solid fa-check text-[12px]"></i></span>}
+              </p>
               <p className="text-base  text_shadow font-bold mb-4">{userData.role}</p>
               <h1 className="text-left text-[16px] lg:text-[18px] font-bold light_shadow">About</h1>
               <p className="text-sm lg:text-base truncate-3-lines font-bold text-black text-left">{userData.about}</p>
@@ -65,15 +67,18 @@ const PeopleProfile = () => {
       {/* <h2 className="px-4 pb-2 pt-3 text-[18px] font-bold text-[#0d141c] light_shadow text-white">Skills : </h2> */}
       <div className="flex flex-wrap gap-3 mt-2 pt-1 items-center">
           <h2 className="pl-4 pb-2 pt-3 text-[16px] lg:text-[18px] font-bold text-[#0d141c] light_shadow text-white">Skills : </h2>
-        {userData.skills.map((skill,index) => (
+        {userData?.skills?.map((skill,index) => (
           <div key={index} className=" h-7 lg:h-8 rounded-lg bg-[#e7edf4] px-3 lg:px-4 flex items-center mt-2 box_shadow">
             <p className="text-sm font-medium text-[#0d141c]">{skill}</p>
           </div>
         ))}
       </div>
-      <h2 className="px-4 pb-3 pt-5 text-[16px] lg:text-[18px] font-bold text-black light_shadow text-white">Email : <span className="text-[16px] lg:text-[18px] text-black ">{userData.email}</span></h2>
+      {status==="friends" && <h2 className="px-4 pb-3 pt-5 text-[16px] lg:text-[18px] font-bold text-black light_shadow text-white">Email : <span className="text-[16px] lg:text-[18px] text-black "><a 
+      // href={`mailto:${userData.email}`}
+      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${userData.email}`}
+      target="_blank">{userData.email}</a></span></h2>}
 
-      <div className="flex justify-center gap-4 mt-4 text-center">
+      <div className="flex justify-center gap-4 mt-10 text-center">
         {status==="friends" &&
            (<button className="px-6 py-2 text-white connect_btn pointer-events-none">
            You are already connected

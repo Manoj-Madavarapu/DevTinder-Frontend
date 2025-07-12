@@ -44,16 +44,18 @@ useEffect(()=>{
            {store?.length===0? (<><h1 className="m-auto mt-20 font-bold text-2xl">No Requests found</h1></>):
            (<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 pb-4">
            {getPages().map(x=>{
-            const {firstName,lastName,age,role,about,gender,photoUrl}=x.toUserId
+            const {firstName,lastName,age,role,about,gender,photoUrl,isPremium}=x.toUserId
             const _id=x._id
             // this is the connection request_id we have to send in api
             return(
-             <div className="flex items-center gap-1 px-8 w-100 body-bg py-5 mb-1 for_down_border " key={x._id}>
-              <div className="rounded-full h-25 w-15 overflow-hidden  background_img_connec ">
-                <img src={photoUrl} alt="" className=" rounded-full w-full h-full object-cover"/>
+             <div className="flex items-center gap-1 pl-8 pr-3 w-100 body-bg py-5 mb-1 for_down_border  " key={x._id}>
+              <div className="rounded-full h-25 w-15 min-width-15 overflow-hidden  background_img_connec ">
+                <img src={photoUrl} alt="" className=" rounded-full  w-full h-full min-width-15 object-cover"/>
               </div>
-              <div className="flex flex-col justify-center pl-4  color max-w-100 ">
-                <p className="text-white text-base  font-bold leading-normal line-clamp-1 name ">{firstName} {lastName}</p>
+              <div className="flex flex-col justify-center pl-4  color max-w-75 ">
+                <p className="text-white text-base  font-bold leading-normal line-clamp-1 name ">{firstName} {lastName}
+                    {isPremium && <span className="inline-flex ml-3 bg-blue-500 rounded-full  p-1 relative -top-1"><i class="fa-solid fa-check text-[10px]"></i></span>}
+                </p>
                 <p className="text-black text-sm font-normal leading-normal line-clamp-1 pt-1">{role}</p>
                 {/* <p className="text-[#9dacb8] text-sm font-normal py-1 line-clamp-3">{about}</p> */}
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{age} {age && "years old"}  {gender && " | "} {gender}</p>

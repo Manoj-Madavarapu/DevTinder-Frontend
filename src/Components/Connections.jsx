@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 let Connections=()=> {
     let [store,setStore]=useState()
-    
+    let navigate=useNavigate();
     // console.log(store)
 let fetchConnections=async ()=>{
     try{
@@ -46,12 +47,15 @@ useEffect(()=>{
           </div>
           {store.length===0? (<><h1 className="m-auto mt-20 font-bold text-2xl">No Connections found</h1><p className="m-auto font-bold text-base mt-2">Send requests to increase your connections</p></>):(
            getPages().map(x=>(
-             <div className="flex  gap-4 px-4 body-bg pt-2  pb-5 mb-5 for_down_border" key={x?._id}>
-              <div className="rounded-full h-25 w-20 overflow-hidden  background_img_connec min-w-20 ">
+             <div className="flex  gap-4 px-4 body-bg pt-2  pb-5 mb-5 for_down_border " key={x?._id}>
+              <div className="rounded-full h-25 w-20 overflow-hidden  background_img_connec min-w-20 cursor-pointer " 
+              onClick={()=>navigate(`/devTinder/usersProfile/${x.firstName+"-"+x.lastName}`,{state:x})}
+              >
                 <img src={x?.photoUrl} alt="" className="rounded-full w-full h-full object-cover"/>
               </div>
               <div className="flex flex-col justify-center px-4 color">
-                <p className="text-white text-base  font-bold leading-normal line-clamp-1 name">{x?.firstName} { x?.lastName}</p>
+                <p className="text-white text-base  font-bold leading-normal line-clamp-1 name">{x?.firstName} { x?.lastName}
+                   {x?.isPremium && <span className="inline-flex ml-3 bg-blue-500 rounded-full  p-1 relative -top-1"><i class="fa-solid fa-check text-[10px]"></i></span>}</p>
                 <p className="text-black text-sm font-normal leading-normal line-clamp-1">{x?.role}</p>
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{x?.about}</p>
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{x?.age} {x?.age && "years old"}  {x?.gender && "| "}{x?.gender}</p>

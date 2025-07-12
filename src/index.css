@@ -262,7 +262,7 @@
     text-shadow: 0px 0px 1px rgb(0, 0, 0);
 }
 .box_shadow{
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 1px 1px 1px black;
 }
 .profile_border{
     border: 1px solid white;
@@ -344,7 +344,9 @@
 }
 .for_down_border{
     border-bottom: 3px solid white;
-    border-radius: 20px 0px 20px 20px ;
+    /* border-left: 3px solid white; */
+    border-right: 3px solid white;
+    border-radius: 20px 20px 20px 20px ;
     box-shadow: 0px 2px 2px black;
 }
 .for_down_border:hover{
@@ -551,4 +553,31 @@
   .devTinder_logo_h1 span::first-letter {
     font-size: 32px;
   }
+}
+
+.activePayment_card{
+    box-shadow: 0px 0px 10px black;
+    transform: scale(1.05);
+    background-color: rgb(184, 148, 81);
+    /* background-color: rgb(227, 162, 42); */
+    border: none;
+    /* border-color: #0c7ff2; */
+  /* box-shadow: 0 0 0 2px rgba(12, 127, 242, 0.2); */
+    /* background-color: #f0f8ff; */
+}
+
+.premiumUser{
+    /* border: 3px solid rgb(255, 200, 0); */
+    border: 3px solid #ffb700;
+    width: 50px !important;
+    height: 50px !important
+}
+.VIP_bg{
+    /* background-image: linear-gradient(rgb(198, 180, 80),rgb(173, 149, 10)); */
+     background-image: linear-gradient(rgb(179, 154, 16),rgb(168, 145, 20));
+     /* color: black !important */
+}
+.Pro_bg{
+      background-image: linear-gradient(rgb(190, 88, 24));
+
 }

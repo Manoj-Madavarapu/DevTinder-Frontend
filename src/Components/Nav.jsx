@@ -7,7 +7,7 @@ import ErrorPage from "./Error";
 import { addUsers } from "../utils/searchStore";
 // import { fetchRequest } from "./Request";
 
-let Nav=()=>{
+let Nav=({premiumUser})=>{
   let [searchBox,setSearchBox]=useState(false);
   let [inputValue,setInputValue]=useState("");
   let [isMobile,setIsMobile]=useState(window.innerWidth<900);
@@ -68,7 +68,7 @@ let Nav=()=>{
  useEffect(() => {
     const handleResize = () => {
     setIsMobile(window.innerWidth<900);
-    console.log(isMobile,window.innerWidth)
+    // console.log(isMobile,window.innerWidth)
   };
   window.addEventListener('resize', handleResize);
 
@@ -87,7 +87,7 @@ let Nav=()=>{
 
     return(
         <>
-        <div className="navbar bg-base-300 bg-transparent z-6000 !px-0 ">
+        <div className="navbar bg-base-300 bg-transparent z-6000 !px-0">
           <div className="flex-1">
             <Link  className="btn bg-transparent border-none app_logo">
                 {/* <img src="public/images/ChatGPT Image Jun 19, 2025, 05_16_52 PM.png" alt="" className="mx-6  devTinder-logo"/> */}
@@ -123,7 +123,7 @@ let Nav=()=>{
             </div>
             <div className="dropdown dropdown-end mr-2 sm:mr-4 md:mr-6 mt-2 z-2000">
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 h-10 rounded-full ">
+                <div className={`w-10 h-10 rounded-full ${premiumUser?.isPremium?"premiumUser":""} `}>
                   {user && <img
                     alt="Tailwind CSS Navbar component"
                     src={user?.photoUrl}  className="w-full h-full"/> }
@@ -149,6 +149,10 @@ let Nav=()=>{
                 </li>
                 <li> <Link to="/devTinder/Connection-requests/send">
                      Request's Send
+                  </Link></li>
+                <li> <Link to="/devTinder/Premium-membership">
+                    Premium Membership
+                    {premiumUser?.isPremium && <span className="bg-green-500 w-5 h-5 rounded-full flex m-auto justify-center items-center"><i className="fa-solid fa-check font-bold"></i></span>}
                   </Link></li>
                 <li><a onClick={handleLogout}>Logout</a></li>
               </ul>

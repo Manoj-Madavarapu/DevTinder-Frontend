@@ -22,6 +22,7 @@ const PeopleProfile=lazy(()=>import("./Components/PeopleProfile.jsx"))
 // import PeopleProfile from "./Components/PeopleProfile.jsx"
 // import Request from './Components/Request.jsx';
 const Request=lazy(()=>import("./Components/Request.jsx"))
+import Premium from './Components/Premium.jsx';
 const App = () => {
   return (
     <div>
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/devTinder/requests-recieved" element={<Request/>}></Route>
           <Route path="/devTinder/Connection-requests/send" element={<RequestSend/>}></Route>
           <Route path="/devTinder/usersProfile/:name" element={<PeopleProfile/>}></Route>
+          <Route path="/devTinder/Premium-membership" element={<Premium/>}></Route>
         </Route>
       </Routes>
       </Suspense>

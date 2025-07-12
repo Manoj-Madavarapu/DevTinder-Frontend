@@ -47,16 +47,18 @@ let handleRequests=async (status,id)=>{
           </div>
            {requestData.length===0? (<><h1 className="m-auto mt-20 font-bold text-2xl">No Requests found</h1></>):
            (requestData.map(x=>{
-            const {firstName,lastName,age,role,about,gender,photoUrl}=x.fromUserId
+            const {firstName,lastName,age,role,about,gender,photoUrl,isPremium}=x.fromUserId
             const _id=x._id
             // this is the connection request_id we have to send in api
             return(
-             <div className="flex items-center gap-1 lg:gap-4 px-4 lg:px-8   body-bg py-3 lg:py-5 mb-5 for_down_border cursor-pointer " key={x._id} onClick={()=>navigate(`/devtinder/usersProfile/${firstName+"-" +lastName}`,{state:x.fromUserId})}>
-              <div className="rounded-full h-25 min-w-18 max-w-20  overflow-hidden  background_img_connec ">
+             <div className="flex items-center gap-1 lg:gap-4 px-4 lg:px-8   body-bg py-3 lg:py-5 mb-5 for_down_border " key={x._id} >
+              <div className="rounded-full h-25 min-w-18 max-w-20  overflow-hidden  background_img_connec cursor-pointer" onClick={()=>navigate(`/devtinder/usersProfile/${firstName+"-" +lastName}`,{state:x.fromUserId})}>
                 <img src={photoUrl} alt="" className=" rounded-full w-full h-full object-cover"/>
               </div>
               <div className="flex flex-col justify-center pl-4  color max-w-100 min-w-50 ">
-                <p className="text-white text-base  font-bold leading-normal line-clamp-1 name ">{firstName} {lastName}</p>
+                <p className="text-white text-base  font-bold leading-normal line-clamp-1 name ">{firstName} {lastName}
+                    {isPremium && <span className="inline-flex ml-3 bg-blue-500 rounded-full  p-1 relative -top-1"><i class="fa-solid fa-check text-[10px]"></i></span>}
+                </p>
                 <p className="text-black text-sm font-normal leading-normal line-clamp-1 pt-1">{role}</p>
                 <p className="text-[#9dacb8] text-sm font-normal py-1 line-clamp-3">{about}</p>
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{age} {age && "years old"}  {gender && " | "} {gender}</p>

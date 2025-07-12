@@ -1,14 +1,15 @@
 import React from "react";
 import Nav from "./Nav";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const DevTinder = () => {
   let navigate=useNavigate()
   return (
     <>
-    <div className="relative flex min-h-screen flex-col items-center overflow-x-hidden body_bg " >
+    <div className="relative flex min-h-screen flex-col items-center overflow-x-hidden body_bg" >
        <Nav></Nav>
-      <div className="flex flex-col h-full flex-grow px-10 sm:px-10 md:px-20 lg:px-40 py-5 justify-center text-white">
+      <div className="flex flex-col h-full flex-grow px-10 sm:px-10 md:px-20 lg:px-40 py-5 justify-center text-white mb-5">
         <div className="flex flex-col flex-1 max-w-[960px] w-full text-white">
           <div>
             <div className="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-white rounded-xl min-h-[218px] h-[230px]"
@@ -85,6 +86,7 @@ const DevTinder = () => {
         </div>
       </div>
     </div>
+    <Footer/>
   </>
   );
 };

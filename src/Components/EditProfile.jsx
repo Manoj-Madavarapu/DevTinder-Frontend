@@ -18,7 +18,7 @@ const EditProfile = () => {
   const [about, setAbout] = useState("");
   const [image,setImage]=useState("");
   const [error,setError]=useState(false)
-  const maxAboutLength = 250;
+  const maxAboutLength = 500;
   const dispatch=useDispatch()
   let navigate=useNavigate();
 
