@@ -40,7 +40,7 @@ const SwipeCard = ({ user, onSwipeEnd,index,feedData }) => {
         <img src={photoUrl} alt="image"  className='card_img image-full w-full h-full min-w-[345px] lg:min-w-[360px]   max-height-70 object-cover !brightness-35 '/>
       </figure>
       <div className="absolute  bottom-0 flex flex-col  p-4 sm:p-4 md:p-5">
-        <h2 className="card-title text-3xl mb-3 text-white">{firstName} {lastName}</h2>
+        <h2 className="card-title text-2xl lg:text-3xl  mb-3 text-white">{firstName} {lastName}</h2>
          <h2 className="font-bold line-clamp-3 text-white">{role}</h2>
         { age && gender && <p className='my-1 text-white'>{age +", "+ gender}</p>}
         <p className='line-clamp-3 overflow-hidded text-white'>{about}</p>
