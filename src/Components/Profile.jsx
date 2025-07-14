@@ -23,7 +23,6 @@ const Profile = () => {
                 <div className="flex flex-col items-center gap-4">
                   {/* <h1>Your Profile</h1> */}
                <div className="rounded-full w-32 h-32 bg-cover  profile_img">
-                    {/* <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaV0nv8O3-AxGRxwv3o6dH_dVRy0vpDFeIZbnno1Bmf0HiZAee1AfIJnulwVa1bNcenmOwZoUaOqWeMVWL-2EiFtZGiWAb2ZFbu9g2OpQEULjrRaERPLHK1Shj24sJ0KFFKdADB05crI4YCGumknYOpOEXEN5PWp7SxIzE8IfuQp7K1xFrCTjD3F0eqVyIEgEi93kiEOtOOJdCt8CxBw1CodhlMtehlrXYOZnfHmHWKRH2sTBfi7LiSh7ATrGqKQ8zZr_wPFRIQQnL" alt="" className="rounded-full object-cover"/> */}
                     <img src={userData.photoUrl} alt="" className="rounded-full object-contain w-full h-full"/>
                     <div className="edit_profile_icon tooltip font-bold tooltip-info bg-red-900 " data-tip="Edit Profile" ><i className="fa-solid fa-user-pen text-xl ml-1" onClick={()=>navigate("/devTinder/Profile/Edit")}></i></div>
                   </div>
