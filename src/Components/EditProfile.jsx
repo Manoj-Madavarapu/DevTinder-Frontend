@@ -49,7 +49,7 @@ const EditProfile = () => {
       alert('You can only add up to 15 skills.');
       return;
     }
-        const res=await axios.patch("http://localhost:4000/profile/edit",{
+        const res=await axios.patch("https://devtinder-tjp2.onrender.com/profile/edit",{
         firstName,lastName,role,age,gender,about,photoUrl:image,skills:skillsArray
     },{withCredentials:true})
     // console.log(res.data.data)

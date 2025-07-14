@@ -21,7 +21,7 @@ let Chat=()=>{
     // making an api call to get the old chat messages from chat Database
     let fetchChatMessages=async ()=>{
       try{
-        let chat=await axios.get(`http://localhost:4000/chat/${targetUserId}`,{withCredentials:true});
+        let chat=await axios.get(`https://devtinder-tjp2.onrender.com/chat/${targetUserId}`,{withCredentials:true});
         // console.log(chat.data.messages);
 
         let chatMessages=chat.data.messages.map(msg=>{
@@ -46,7 +46,7 @@ let Chat=()=>{
 
     useEffect(()=>{
       if(!loginUser) return;
-      const socket=io("http://localhost:4000")
+      const socket=io("https://devtinder-tjp2.onrender.com")
       // as soon as my page loads, socket connection is made and joinChat event is emitted 
       socket.emit("joinChat",{
         firstName:loginUser?.firstName,
@@ -70,7 +70,7 @@ let Chat=()=>{
     },[loginUser,targetUserId])
 
     const sendMessage =()=>{
-      const socket=io("http://localhost:4000")
+      const socket=io("https://devtinder-tjp2.onrender.com")
       socket.emit("sendMessage",{
         firstName:loginUser?.firstName,
         userId,

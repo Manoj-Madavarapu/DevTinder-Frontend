@@ -15,7 +15,7 @@ const PeopleProfile = () => {
 
   let fetchStatus=async()=>{
     try{
-        let res=await axios.get(`http://localhost:4000/connections/status/${userData._id}`,{withCredentials:true});
+        let res=await axios.get(`https://devtinder-tjp2.onrender.com/connections/status/${userData._id}`,{withCredentials:true});
         console.log(res.data);
         setStatus(res.data.status)
     }

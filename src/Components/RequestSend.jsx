@@ -9,7 +9,7 @@ const RequestSend = () => {
 //   this is used to fetch request data from backend
 const fetchRequest=async()=>{
     try{
-        const res=await axios.get("http://localhost:4000/user/Connection-requests/send",{withCredentials:true})
+        const res=await axios.get("https://devtinder-tjp2.onrender.com/user/Connection-requests/send",{withCredentials:true})
         console.log(res.data);
         setStore(res.data);
     }

@@ -19,7 +19,7 @@ const SignUp = () => {
   let handleSignUp=async ()=>{
     setError("");
     try{
-      const res= await axios.post("http://localhost:4000/signup",{
+      const res= await axios.post("https://devtinder-tjp2.onrender.com/signup",{
         firstName,
         lastName,
         email,

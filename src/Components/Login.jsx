@@ -17,7 +17,7 @@ const Login = () => {
 
   let handleLogin=async ()=>{
     try{
-      const res= await axios.post("http://localhost:4000/login",{
+      const res= await axios.post("https://devtinder-tjp2.onrender.com/login",{
         // email:email  // this is the same as above line
         email,
         password,
@@ -29,8 +29,11 @@ const Login = () => {
       navigate("/devTinder/feed");
     }
     catch(err){
-      setError(err.response.data)
-      console.error("Login failed:", err);
+      // setError(err.response.data)
+      // console.error("Login failed:", err);
+      const errorMsg = err.response?.data || "Something went wrong!";
+      setError(errorMsg);
+      console.error("❌ Login failed:", errorMsg);
     }
   }
   return (

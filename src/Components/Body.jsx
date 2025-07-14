@@ -15,13 +15,13 @@ const Body = () => {
   let fetchUser=async()=>{
     if(userData) return ;
     try{
-      let res=await axios.get("http://localhost:4000/profile/view",{withCredentials:true})
+      let res=await axios.get("https://devtinder-tjp2.onrender.com/profile/view",{withCredentials:true})
       // console.log("userData",res.data)
       dispatch(addUser(res.data))
       // isPremiumUser()
     }
     catch(err){
-      if(err.response.status===401){
+      if(err?.response?.status===401){
         navigate("/devTinder/login")
       }
       console.log(err)
@@ -30,7 +30,7 @@ const Body = () => {
 
    const isPremiumUser=async ()=>{
     try{
-      const res=await axios.get("http://localhost:4000/membership/verification",{withCredentials:true})
+      const res=await axios.get("https://devtinder-tjp2.onrender.com/membership/verification",{withCredentials:true})
       // console.log(res.data)
       setPremiumUser(res.data)
     }

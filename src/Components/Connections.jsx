@@ -10,7 +10,7 @@ let Connections=()=> {
     // console.log(store)
 let fetchConnections=async ()=>{
     try{
-        let res=await axios.get("http://localhost:4000/user/your-connections/accepted",{withCredentials:true})
+        let res=await axios.get("https://devtinder-tjp2.onrender.com/user/your-connections/accepted",{withCredentials:true})
         // console.log(res.data);
         setStore(res.data)
     }
@@ -57,7 +57,7 @@ useEffect(()=>{
               </div>
               <div className="flex flex-col justify-center px-4 color">
                 <p className="text-white text-base  font-bold leading-normal line-clamp-1 name">{x?.firstName} { x?.lastName}
-                   {x?.isPremium && <span className="inline-flex ml-3 bg-blue-500 rounded-full  p-1 relative -top-1"><i class="fa-solid fa-check text-[10px]"></i></span>}</p>
+                   {x?.isPremium && <span className="inline-flex ml-3 bg-blue-500 rounded-full  p-1 relative -top-1"><i className="fa-solid fa-check text-[10px]"></i></span>}</p>
                 <p className="text-black text-sm font-normal leading-normal line-clamp-1">{x?.role}</p>
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{x?.about}</p>
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{x?.age} {x?.age && "years old"}  {x?.gender && "| "}{x?.gender}</p>

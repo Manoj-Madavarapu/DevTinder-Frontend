@@ -12,7 +12,7 @@ const Feed = () => {
 
   const getFeedData = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/feed", { withCredentials: true });
+      const res = await axios.get("https://devtinder-tjp2.onrender.com/feed", {withCredentials: true });
       dispatch(addFeed(res.data));
     } catch (err) {
       console.log("Error fetching feed data:", err);

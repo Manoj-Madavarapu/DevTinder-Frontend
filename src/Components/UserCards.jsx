@@ -19,7 +19,7 @@ const UserCards = ({ feedData }) => {
   const handleSendRequests = async (dir, user) => {
   try {
     const status = dir === 'right' ? 'interested' : 'ignored';
-    const res = await axios.post(`http://localhost:4000/request/${status}/${user._id}`, {}, { withCredentials: true });
+    const res = await axios.post(`https://devtinder-tjp2.onrender.com/request/${status}/${user._id}`, {}, { withCredentials: true });
     dispatch(removeUserFeed(user._id));
     setRemovedUserData(res.data.data);
     setPopUp(true);

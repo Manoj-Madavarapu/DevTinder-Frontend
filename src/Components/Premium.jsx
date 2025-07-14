@@ -7,7 +7,7 @@ const Premium = () => {
   // this is used to check wheather the user is having premium membership or not
   const isPremiumUser=async ()=>{
     try{
-      const res=await axios.get("http://localhost:4000/membership/verification",{withCredentials:true})
+      const res=await axios.get("https://devtinder-tjp2.onrender.com/membership/verification",{withCredentials:true})
       console.log(res.data)
       setPremiumUser(res.data)
     }
@@ -23,7 +23,7 @@ const Premium = () => {
   const handlePayment=async (membershipType)=>{
      console.log(membershipType)
     try{
-      const order=await axios.post("http://localhost:4000/payment/create",{
+      const order=await axios.post("https://devtinder-tjp2.onrender.com/payment/create",{
         membershipType
       },{withCredentials:true})
       console.log(order.data)

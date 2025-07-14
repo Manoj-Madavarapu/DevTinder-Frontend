@@ -13,7 +13,7 @@ const Request = () => {
 //   this is used to fetch request data from backend
 const fetchRequest=async()=>{
     try{
-        const res=await axios.get("http://localhost:4000/user/request/received",{withCredentials:true})
+        const res=await axios.get("https://devtinder-tjp2.onrender.com/user/request/received",{withCredentials:true})
         // console.log(res.data);
         dispatch(addRequest(res.data))
     }
@@ -28,7 +28,7 @@ useEffect(()=>{
 // this is used to reject or accept the recieved requests
 let handleRequests=async (status,id)=>{
     try{
-    let res=await axios.post("http://localhost:4000/request/review/"+status+"/"+id,{},{withCredentials:true});
+    let res=await axios.post("https://devtinder-tjp2.onrender.com/request/review/"+status+"/"+id,{},{withCredentials:true});
     dispatch(removeRequest(id))
     }
     catch(err){

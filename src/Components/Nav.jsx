@@ -34,7 +34,7 @@ let Nav=({premiumUser})=>{
   
   let handleLogout=async()=>{
     try{
-       let res=await axios.post("http://localhost:4000/logout",{},{withCredentials:true});
+       let res=await axios.post("https://devtinder-tjp2.onrender.com/logout",{},{withCredentials:true});
        dispatch(removeUser());
       //  this displatch will remove the userData from the store
       navigate("/devTinder/login");
@@ -55,7 +55,7 @@ let Nav=({premiumUser})=>{
       return
     }
     try{
-       const res=await axios.get(`http://localhost:4000/users/search?q=${inputValue}`,{withCredentials:true})
+       const res=await axios.get(`https://devtinder-tjp2.onrender.com/users/search?q=${inputValue}`,{withCredentials:true})
        console.log(res.data)
        dispatch(addUsers(res.data));
        setSearchBox(true);

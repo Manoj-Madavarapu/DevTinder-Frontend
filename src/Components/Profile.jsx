@@ -29,7 +29,7 @@ const Profile = () => {
                   </div>
                   <div className="text-center ">
                     <p className="text-[20px] lg:text-[22px] font-bold text_shadow name mb-2">{userData.firstName+" "+userData.lastName} 
-                      {premiumUser?.isPremium && <span className="inline-flex ml-2 bg-blue-500 rounded-full p-1"><i class="fa-solid fa-check text-[12px]"></i></span>}
+                      {premiumUser?.isPremium && <span className="inline-flex ml-2 bg-blue-500 rounded-full p-1"><i className="fa-solid fa-check text-[12px]"></i></span>}
                     </p>
                     <p className=" text-sm lg:text-base  text_shadow font-bold">{userData.role}</p>
                     <p className="text-sm lg:text-base truncate-3-lines font-bol  mt-1">{userData.about}</p>
