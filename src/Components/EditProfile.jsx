@@ -104,7 +104,14 @@ const EditProfile = () => {
 
           <label className="fieldset-legend">Profile Image</label>
           {/* <input id="image" type="file" accept="image/*" className="file-input-ghost  w-full" onChange={(e)=>setImage(e.target.value)}/> */}
-          <input id="image" type="input"  className="input w-full" placeholder='Pass PhotUrl' onChange={(e)=>setImage(e.target.value)}/>
+          <input id="image" type="input"  className="input w-full" placeholder='Please pass photo url'
+           onChange={(e)=>{
+            let url=e.target.value;
+            if(!url.startsWith("http://") && !url.startsWith("https://")){
+              url= "https://"+url;
+            }
+            setImage(url);
+            }}/>
           <label className="fieldset-legend">About</label>
           <textarea
             value={about}
@@ -120,7 +127,7 @@ const EditProfile = () => {
 
       <button
         className="mt-1  text-white px-6 py-2 saveChanges_btn cursor-pointer font-bold"
-        onClick={()=>{handleProfileUpadte();handleProfileUpadte2()}}
+        onClick={()=>{handleProfileUpadte()}}
       >
         Save Changes
       </button>

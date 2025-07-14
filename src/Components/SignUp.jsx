@@ -43,7 +43,7 @@ const SignUp = () => {
   return (
     <>
       <div className='flex flex-col md:flex-row items-center justify-center mt-10 px-4' >
-        <img src="/images/ChatGPT Image Jun 29, 2025, 12_36_32 AM.png" alt=""  className='hidden md:block w-110 h-120 card_shadow_img '/>
+        <img src="/images/ChatGPT Image Jun 29, 2025, 12_36_32 AM.png" alt=""  className='hidden md:block w-110 h-125 card_shadow_img '/>
         <div className="card bg-base-300 w-110 w-[90%] sm:w-[400px]  flex flex-col justify-center card_shadow pl-3 pb-3 p-4">
               <div className="card-body w-full m-auto">
                 <h1 className='font-bold text-xl mb-2'>Sign Up</h1>
@@ -51,9 +51,10 @@ const SignUp = () => {
                   <input type="email" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input w-full" placeholder="Enter your First Name" />
                   <input type="email" value={lastName} onChange={(e) => setLastName(e.target.value)} className="input w-full" placeholder="Enter your Last Name" />   
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input w-full" placeholder="Enter your Email" />
+                  <p className="text-yellow-500 -my-3 mb-0 ">* To receive further updates enter valid Email</p>
                   <div className='relative'>
                   <input type={showPassword?"text":"password"} value={password} onChange={(e) => setPassword(e.target.value)} className="input w-full" placeholder="Enter your Password" />
-                     <i className={`fa-solid ${showPassword?"fa-eye":"fa-eye-slash"} absolute top-3 text-base -ml-7 cursor-pointer text-gray-400 `} onClick={()=>setShowPaassword((prev)=>!prev)}></i>
+                     <i className={`fa-solid ${showPassword?"fa-eye":"fa-eye-slash"} absolute top-3 text-base -ml-7 cursor-pointer text-gray-400 z-10`} onClick={()=>setShowPaassword((prev)=>!prev)}></i>
                   </div>
                   <select defaultValue="Select Your Gender" className="select w-full max-w-full outline-none cursor-pointer" onChange={(e)=>setGender(e.target.value)}>
                     <option disabled>Select Your Gender</option>

@@ -399,6 +399,13 @@
     position: relative;
     top: -4px;
 }
+.great{
+     color: #deac2f;
+     color:rgb(236, 185, 65)
+     /* color: white; */
+    /* color: rgb(241, 123, 6); */
+    /* text-shadow: 0px 0px 0px; */
+}
 .toast_edit{
     background-color: white;
     border-radius: 30px !important;
@@ -580,4 +587,21 @@
 .Pro_bg{
       background-image: linear-gradient(rgb(190, 88, 24));
 
+}
+.border_bottom{
+    /* border-top: 2px solid rgb(108, 101, 101); */
+    border-bottom: 2px solid rgb(108, 101, 101);
+    padding-bottom: 8px;
+    /* border-radius: 5px; */
+
+}
+.chat_div{
+    box-shadow: 0px 0px 10px rgb(36, 36, 36);
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;   
 }

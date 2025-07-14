@@ -31,7 +31,7 @@ const Body = () => {
    const isPremiumUser=async ()=>{
     try{
       const res=await axios.get("http://localhost:4000/membership/verification",{withCredentials:true})
-      console.log(res.data)
+      // console.log(res.data)
       setPremiumUser(res.data)
     }
     catch(err){

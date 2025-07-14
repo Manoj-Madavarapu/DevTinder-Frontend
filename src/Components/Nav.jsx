@@ -126,7 +126,7 @@ let Nav=({premiumUser})=>{
                 <div className={`w-10 h-10 rounded-full ${premiumUser?.isPremium?"premiumUser":""} `}>
                   {user && <img
                     alt="Tailwind CSS Navbar component"
-                    src={user?.photoUrl}  className="w-full h-full"/> }
+                    src={user?.photoUrl}  className="w-full h-full object-contain"/> }
                 </div>
               </div>
               <ul

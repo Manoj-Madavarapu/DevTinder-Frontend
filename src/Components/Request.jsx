@@ -20,10 +20,10 @@ const fetchRequest=async()=>{
     catch(err){
         console.log(err)
     }
-  }
-  useEffect(()=>{
-    fetchRequest();
-  },[])
+}
+useEffect(()=>{
+  fetchRequest();
+},[])
  
 // this is used to reject or accept the recieved requests
 let handleRequests=async (status,id)=>{

@@ -1,15 +1,17 @@
 import axios from "axios";
+import { nav } from "framer-motion/m";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 let Connections=()=> {
     let [store,setStore]=useState()
     let navigate=useNavigate();
+
     // console.log(store)
 let fetchConnections=async ()=>{
     try{
         let res=await axios.get("http://localhost:4000/user/your-connections/accepted",{withCredentials:true})
-        console.log(res.data);
+        // console.log(res.data);
         setStore(res.data)
     }
     catch(err){
@@ -41,7 +43,7 @@ useEffect(()=>{
     <>
     <div className="relative flex flex-col w-full body-bg over_height">
       <main className="flex flex-col flex-1 justify-center items-center px-4 pt-2">
-        <div className="flex max-w-[960px] w-110 sm:w-90 lg:w-200 md:w-150 flex-col px-8 lg:mt-0">
+        <div className="flex max-w-[960px] w-110 sm:w-150 lg:w-200 md:w-150 flex-col px-8 lg:mt-0">
           <div className="flex flex-wrap justify-between gap-3 p-4">
             <p className="text-white text-2xl sm:text-3xl md:text-4xl font-bold your_connections mb-3"> Your Connections  &nbsp;<i className="fa-solid fa-handshake-angle text-[20px]"></i></p>
           </div>
@@ -60,7 +62,13 @@ useEffect(()=>{
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{x?.about}</p>
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{x?.age} {x?.age && "years old"}  {x?.gender && "| "}{x?.gender}</p>
               </div>
+             <div className="relative lg:right-10  top-1 lg:top-2 tooltip cursor-pointer" data-tip="Chat" 
+             onClick={()=>navigate(`/devTinder/Chating/${x._id}`,{state:x})}
+             >
+              <i className="fa-solid fa-message"></i>
+             </div>
             </div>
+            
            )))
           }
         </div>

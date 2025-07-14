@@ -50,7 +50,7 @@ const Login = () => {
                   {/* <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} className="input mb-6" placeholder="Enter your Password" /> */}
                   <div className='relative'>
                   <input type={showPassword?"text":"password"} value={password} onChange={(e) => setPassword(e.target.value)} className="input mb-6 " placeholder="Enter your Password" />
-                     <i className={`fa-solid ${showPassword?"fa-eye":"fa-eye-slash"} absolute top-3 text-base -ml-8 cursor-pointer text-gray-400 `} onClick={()=>setShowPaassword((prev)=>!prev)}></i>
+                     <i className={`fa-solid ${showPassword?"fa-eye":"fa-eye-slash"} absolute top-3 text-base -ml-8 cursor-pointer text-gray-400 z-10`} onClick={()=>setShowPaassword((prev)=>!prev)}></i>
                   </div>
                   <p className="label text-red-500 -mt-5 mb-2">{error}</p>
                 </fieldset>

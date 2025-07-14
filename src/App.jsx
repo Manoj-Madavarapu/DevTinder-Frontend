@@ -3,26 +3,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home.jsx';
 import Body from './Components/Body.jsx';
 const Login=lazy(()=>import("./Components/Login.jsx"))
-// import Login from './Components/Login.jsx'
 const SignUp=lazy(()=>import("./Components/SignUp.jsx"))
-// import SignUp from './Components/SignUp.jsx';
 const Profile=lazy(()=>import("./Components/Profile.jsx"))
-// import Profile from './Components/Profile.jsx'
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore.js';
 const Feed=lazy(()=>import("./Components/Feed.jsx"))
-// import Feed from './Components/Feed.jsx';
 const EditProfile=lazy(()=>import("./Components/EditProfile.jsx"))
-// import EditProfile from './Components/EditProfile.jsx';
 const Connections=lazy(()=>import("./Components/Connections.jsx"))
-// import Connections from './Components/Connections.jsx';
 const RequestSend=lazy(()=>import("./Components/RequestSend.jsx"))
-// import RequestSend from './Components/RequestSend.jsx';
 const PeopleProfile=lazy(()=>import("./Components/PeopleProfile.jsx"))
-// import PeopleProfile from "./Components/PeopleProfile.jsx"
-// import Request from './Components/Request.jsx';
 const Request=lazy(()=>import("./Components/Request.jsx"))
-import Premium from './Components/Premium.jsx';
+const Premium=lazy(()=>import('./Components/Premium.jsx'));
+const Chat=lazy(()=>import("./Components/Chat.jsx"));
 const App = () => {
   return (
     <div>
@@ -42,6 +34,7 @@ const App = () => {
           <Route path="/devTinder/Connection-requests/send" element={<RequestSend/>}></Route>
           <Route path="/devTinder/usersProfile/:name" element={<PeopleProfile/>}></Route>
           <Route path="/devTinder/Premium-membership" element={<Premium/>}></Route>
+          <Route path="/devTinder/Chating/:targetUserId" element={<Chat/>}></Route>
         </Route>
       </Routes>
       </Suspense>
