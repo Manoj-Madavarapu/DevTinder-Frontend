@@ -35,9 +35,9 @@ const SwipeCard = ({ user, onSwipeEnd,index,feedData }) => {
     //  
       transition={{ type: 'spring', stiffness: 300 }}
     >
-    <div className="card bg-white image-full  w-[300px] min-w-[300px] lg:min-w-[360px]  h-[460px] card_shadow2 h-[460px] overflow-hidden relative">
+    <div className="card bg-white image-full  w-[340px] min-w-[300px] lg:min-w-[360px]  h-[460px] card_shadow2 h-[460px] overflow-hidden relative">
       <figure className='relative'>
-        <img src={photoUrl} alt="image"  className='card_img image-full w-full h-full min-width-[300px] lg:min-w-[360px]   max-height-70 object-cover !brightness-35 '/>
+        <img src={photoUrl} alt="image"  className='card_img image-full w-full h-full min-width-[340px] lg:min-w-[360px]   max-height-70 object-cover !brightness-35 '/>
       </figure>
       <div className="absolute  bottom-0 flex flex-col  p-4 sm:p-4 md:p-5">
         <h2 className="card-title text-3xl mb-3 text-white">{firstName} {lastName}</h2>
