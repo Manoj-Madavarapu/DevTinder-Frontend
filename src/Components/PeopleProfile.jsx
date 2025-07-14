@@ -78,7 +78,7 @@ const PeopleProfile = () => {
       href={`https://mail.google.com/mail/?view=cm&fs=1&to=${userData.email}`}
       target="_blank">{userData.email}</a></span></h2>}
 
-      <div className="flex justify-center gap-1 lg:gap-4 md:gap-2 mt-10 text-center">
+      <div className="flex justify-center gap-2 lg:gap-4 md:gap-2 mt-10 text-center">
         {status==="friends" &&
            (
             <>
