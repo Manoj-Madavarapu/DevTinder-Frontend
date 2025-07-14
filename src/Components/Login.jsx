@@ -10,6 +10,7 @@ const Login = () => {
   let [showPassword,setShowPaassword]=useState(false);
   let [isLogin,setIsLogin]=useState(true);
   let [error,setError]=useState();
+  let [loading,setLoading]=useState(false);
   
   let dispatch=useDispatch();
   let navigate=useNavigate();
@@ -17,6 +18,7 @@ const Login = () => {
 
   let handleLogin=async ()=>{
     try{
+      setLoading(true);
       const res= await axios.post("https://devtinder-tjp2.onrender.com/login",{
         // email:email  // this is the same as above line
         email,
@@ -34,6 +36,9 @@ const Login = () => {
       const errorMsg = err.response?.data || "Something went wrong!";
       setError(errorMsg);
       console.error("❌ Login failed:", errorMsg);
+    }
+    finally{
+      setLoading(false)
     }
   }
   return (
@@ -57,7 +62,7 @@ const Login = () => {
                   </div>
                   <p className="label text-red-500 -mt-5 mb-2">{error}</p>
                 </fieldset>
-                <button className="btn font-bold login w-full sm:w-auto" onClick={handleLogin}>Login</button>
+                <button className="btn font-bold login w-full sm:w-auto" onClick={handleLogin}>{loading? "Please wait...":"Login"}</button>
                 <p className='mt-2'>Don't have an Account? <span className='underline font-bold text-blue-500 cursor-pointer' onClick={()=>navigate("/devTinder/sign-up")}> Sign Up</span></p>
               </div>
         </div>
