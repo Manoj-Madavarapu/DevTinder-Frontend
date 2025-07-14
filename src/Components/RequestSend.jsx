@@ -34,7 +34,7 @@ useEffect(()=>{
 
 
 
- return store && (
+ return store ? (
     <div className="relative flex flex-col body-bg over_height">
       <main className="flex  flex-col items-center">
         <div className="flex  max-w-[960px] flex-col">
@@ -72,7 +72,7 @@ useEffect(()=>{
         </div>}
       </main>
     </div>
-  )
+  ):(<h2 className="font-semibold text-center mt-6">Loading...</h2>)
 }
 export default RequestSend;
 

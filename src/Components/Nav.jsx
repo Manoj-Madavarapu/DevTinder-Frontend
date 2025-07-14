@@ -111,7 +111,7 @@ let Nav=({premiumUser})=>{
               />
               <i className="fa-solid fa-magnifying-glass mt-3 z-200  absolute right-6" onClick={handleSearchData}></i>
               {searchBox &&
-              (searchData && searchData?.length>0 ?<div className="searchUser_div w-43 max-h-40 md:w-59 md:max-h-45 lg:w-65 lg:max-h-50 absolute top-11 -left-2 overflow-y-scroll">
+              (searchData && searchData?.length>0 ?<div className="searchUser_div  w-43 max-h-40 md:w-59 md:max-h-45 lg:w-65 lg:max-h-50 absolute top-11 -left-2 overflow-y-scroll">
                   {searchData.map(x=>
                     <div className="flex gap-3 p-2 items-center  inner_div" key={x._id} onClick={()=>navigate(`/devtinder/usersProfile/${x.firstName+"-" +x.lastName}`,{state:x})}>
                       {/* here if you want you can use useParam also by specifing `/devtinder/usersProfile/${x._id}` and in peopelProfile apge use usePara to get this id from url*/}

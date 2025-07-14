@@ -38,7 +38,7 @@ let handleRequests=async (status,id)=>{
 }
 // if it is post request the you should pass {}(empty array if we are not passing any kind of data to backend also) after passing link
 
-  return requestData && (
+  return requestData ? (
     <div className="relative flex flex-col body-bg over_height">
       <main className="flex  justify-center px-10 pt-2">
         <div className="flex  max-w-[960px] flex-col">
@@ -72,7 +72,7 @@ let handleRequests=async (status,id)=>{
         </div>
       </main>
     </div>
-  )
+  ):(<h2 className="font-semibold text-center mt-6">Loading...</h2>)
 }
 
 export default Request
