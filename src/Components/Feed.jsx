@@ -36,7 +36,7 @@ const Feed = () => {
     <div className="flex flex-col md:flex-row px-4 md:px-20 lg:mt-4 mt-8 md:body_bg ">
       {/* Greeting Text */}
       <div className="flex flex-col md:mt-10 ">
-        <h1 className="text-[22px] md:text-[24px] font-bold your_connections">
+        <h1 className="text-[22px] md:text-[24px] font-bold your_connections text-white ">
           Hey, {userData?.firstName}
         </h1>
         <span className="text-[20px] md:text-[24px] font-bold your_connections mt-1">

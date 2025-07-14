@@ -8,10 +8,10 @@ const SwipeCard = ({ user, onSwipeEnd,index,feedData }) => {
 
 //   this funtion is used to call the swipeEnd funtion abased on the swiping(how much we move the card towards left or right)
   const handleDragEnd = async (_, info) => {
-    if (info.offset.x > 250) {
+    if (info.offset.x > 150) {
         // Right swipe
       await onSwipeEnd('right', user);
-    } else if (info.offset.x < -250) {
+    } else if (info.offset.x < -150) {
       // Left swipe
       await onSwipeEnd('left', user);
     } else {
@@ -40,10 +40,10 @@ const SwipeCard = ({ user, onSwipeEnd,index,feedData }) => {
         <img src={photoUrl} alt="image"  className='card_img image-full w-full h-full min-width-[300px] lg:min-w-[360px]   max-height-70 object-cover !brightness-35 '/>
       </figure>
       <div className="absolute  bottom-0 flex flex-col  p-4 sm:p-4 md:p-5">
-        <h2 className="card-title text-3xl mb-3">{firstName} {lastName}</h2>
-         <h2 className="font-bold line-clamp-3">{role}</h2>
-        { age && gender && <p className='my-1'>{age +", "+ gender}</p>}
-        <p className='line-clamp-3 overflow-hidded'>{about}</p>
+        <h2 className="card-title text-3xl mb-3 text-white">{firstName} {lastName}</h2>
+         <h2 className="font-bold line-clamp-3 text-white">{role}</h2>
+        { age && gender && <p className='my-1 text-white'>{age +", "+ gender}</p>}
+        <p className='line-clamp-3 overflow-hidded text-white'>{about}</p>
       </div>
     </div>
     </motion.div>

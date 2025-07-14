@@ -134,9 +134,9 @@ let Nav=({premiumUser})=>{
                 className="menu menu-sm dropdown-content bg-orange-600 rounded-box  mt-3 lg:w-52  md:w-40 sm:w-35 lg:p-2 shadow shadow-drop font-bold">
                 {isMobile&&
                 <li>
-                   <Link to="/devTinder/feed"> <p className="">Feed</p></Link>
-                   <Link to="/devTinder/connections"><p className="">Connections</p></Link>
-                   <Link to="/devTinder/requests-recieved"><p className="mr-5 indicator z-10">Requests
+                   <Link to="/devTinder/feed"> <p className="text-white">Feed</p></Link>
+                   <Link to="/devTinder/connections"><p className="text-white">Connections</p></Link>
+                   <Link to="/devTinder/requests-recieved"><p className="mr-5 indicator z-10 text-white">Requests
                 {requestData && requestData?.length!==0 && <span className="indicator-item badge ">{requestData?.length}</span>}
               </p></Link>
                 </li>

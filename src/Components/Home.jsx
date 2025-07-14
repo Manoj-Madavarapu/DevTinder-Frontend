@@ -17,7 +17,7 @@ const DevTinder = () => {
               //   backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 25%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDm-mZq-j-OnS67S7CqZNy2qHaD1z_k7WlVj9ZWrZz4X7kzuOB3e4Je_0ep0wh5XzW2hZAAh-oI5uX4DILaLkGf7WeYsusYlZ1Gf_78Thg1lpez_KCh4SogEnPr2gqavh5Fv5QcG-vHbqBn6JFT04cddtjEvL4VUW2PoE8jqRymnr9vd1a7Qyyg3sRgS29Wd8qjUIzOYY3YPo21Plm4GCP0eBATSfzhn7-SpTAE1KxFJ5Uls50YX2-RgIRj88toD1xVccQ9BoLRGSg")`,
               // }}
               >
-              <img src="public/images/ChatGPT Image Jul 1, 2025, 04_47_51 PM.png" alt="" className="w-full h-full brightness-90 contrast-95"/>
+              <img src="images/ChatGPT Image Jul 1, 2025, 04_47_51 PM.png" alt="" className="w-full h-full brightness-90 contrast-95"/>
               {/* <img src="public/images/DevTinder_ Connecting Ideas and People.png" alt="" className="w-300 h-full object-fit"/> */}
             </div>
           </div>
