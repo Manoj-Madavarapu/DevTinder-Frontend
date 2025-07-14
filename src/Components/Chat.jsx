@@ -108,8 +108,8 @@ let Chat=()=>{
           // Right side Message(loginuser messages)
           <div className="chat chat-end" key={index}>
             <div className="chat-header text-white/80">You</div>
-            <div className="chat-bubble bg-blue-300 text-black flex relative">
-             <div className="mr-10"> {msg.newMessage} </div>
+            <div className="chat-bubble bg-blue-300 text-black flex relative -ml-2 lg:ml-0">
+             <div className="mr-7 lg:mr-10 md:mr-8"> {msg.newMessage} </div>
               <div className="flex justify-end text-[10px] text-black/70 mt-1 ml-10 absolute right-3 bottom-1">
                  {new Date(msg.createdAt).toLocaleTimeString([], {
                     hour: '2-digit',

@@ -37,7 +37,7 @@ function prevPage(){
 useEffect(()=>{
     fetchConnections()
 },[]);
-  if (!store) return;
+  if (!store) return <h2 className="font-semibold text-center mt-6">Loading...</h2>
   // if(store.length===0) return <><h1 className="">No Connections found</h1></>
   return store ?(
     <>
