@@ -26,7 +26,7 @@ const PeopleProfile = () => {
 
   let handleRequest=async(status,id)=>{
     try{
-        let res=await axios.post(`http://localhost:4000/request/${status}/${id}`,{},{withCredentials:true})
+        let res=await axios.post(`https://devtinder-tjp2.onrender.com/request/${status}/${id}`,{},{withCredentials:true})
         console.log(res.data);
         dispatch(removeUserFeed(id))
         setPopUp(true);
