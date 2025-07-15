@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import Nav from './Nav';
 
 const SignUp = () => {
-  let [email,setEmail]=useState("manoj@gmail.com");
-  let [password,setPassword]=useState("Manoj@123");
+  let [email,setEmail]=useState("");
+  let [password,setPassword]=useState("");
   let [firstName,setFirstName]=useState("");
   let [lastName,setLastName]=useState("");
   let [gender,setGender]=useState("");
