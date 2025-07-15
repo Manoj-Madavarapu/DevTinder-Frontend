@@ -4,6 +4,7 @@ import axios from 'axios';
 const Premium = () => {
   let [selectedPlan,setSelectedPlan]=useState(null);
   let [premiumUser,setPremiumUser]=useState()
+  let[loading,setLoading]=useState(false);
   // this is used to check wheather the user is having premium membership or not
   const isPremiumUser=async ()=>{
     try{
@@ -22,6 +23,7 @@ const Premium = () => {
 
   const handlePayment=async (membershipType)=>{
      console.log(membershipType)
+     setLoading(true)
     try{
       const order=await axios.post("https://devtinder-tjp2.onrender.com/payment/create",{
         membershipType
@@ -60,6 +62,9 @@ const Premium = () => {
     }
     catch(err){
       console.log("Error"+err.message)
+    }
+    finally{
+      setLoading(false);
     }
 
   }
@@ -140,7 +145,7 @@ const Premium = () => {
                       ? '!bg-[rgb(228,171,65)] '
                       : 'bg-[#f0f2f5] '}`} 
                     onClick={()=>handlePayment(plan.name)}>
-                    {selectedPlan===plan.name?"Selected":premiumUser?.membershipType==="Pro"?"Upgrade":"Select"}
+                    {loading ? "Please wait..."  : (selectedPlan===plan.name?"Selected":premiumUser?.membershipType==="Pro"?"Upgrade":"Select")}
                     </button>
                   <div className="flex flex-col gap-2">
                     {plan.features.map((feature, i) => (
