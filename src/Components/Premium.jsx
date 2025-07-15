@@ -23,10 +23,11 @@ const Premium = () => {
   },[]) 
 
   const handlePayment=async (membershipType)=>{
+    setLoadingPlan(membershipType)
+    setSelectedPlan(membershipType)
     alert("Please avoid payments using QRcode! we are facing some issues")
      console.log(membershipType)
     //  setLoading(true)
-    setLoadingPlan(membershipType)
     try{
       const order=await axios.post("https://devtinder-tjp2.onrender.com/payment/create",{
         membershipType
@@ -82,12 +83,12 @@ const Premium = () => {
   const availablePlans = [
     {
       name: 'Pro',
-      price: '₹ 99',
+      price: '₹ 11',
       features: ['Unlimited messaging', 'Enhanced profile visibility', 'Priority support', 'Exclusive features']
     },
     {
       name: 'VIP',
-      price: '₹ 199',
+      price: '₹ 29',
       badge: 'Best Value',
       features: ['Unlimited messaging', 'Maximum profile visibility', '24/7 priority support', 'All exclusive features']
     }
@@ -157,12 +158,12 @@ const Premium = () => {
                     onClick={()=>handlePayment(plan.name)}>
                     {/* {loading ? "Please wait..."  : (selectedPlan===plan.name?"Selected":premiumUser?.membershipType==="Pro"?"Upgrade":"Select")} */}
                      {loadingPlan === plan.name
-    ? "Please wait..."
-    : selectedPlan === plan.name
-    ? "Selected"
-    : premiumUser?.membershipType === "Pro"
-    ? "Upgrade"
-    : "Select"}
+                      ? "Please wait..."
+                      : selectedPlan === plan.name
+                      ? "Selected"
+                      : premiumUser?.membershipType === "Pro"
+                      ? "Upgrade"
+                      : "Select"}
                     </button>
                   <div className="flex flex-col gap-2">
                     {plan.features.map((feature, i) => (
