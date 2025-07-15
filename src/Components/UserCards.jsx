@@ -9,6 +9,7 @@ const UserCards = ({ feedData }) => {
   let [removeUserData,setRemovedUserData]=useState();
   const [data, setData] = useState(feedData || []);
   let [popUp,setPopUp]=useState(false);
+  let [loading,setIsLoading]=useState(false);
   // console.log(feedData)
   const dispatch=useDispatch();
   
@@ -17,6 +18,7 @@ const UserCards = ({ feedData }) => {
 
   // this is used to handle send and ignore the connections to other users 
   const handleSendRequests = async (dir, user) => {
+    setIsLoading(true);
   try {
     const status = dir === 'right' ? 'interested' : 'ignored';
     const res = await axios.post(`https://devtinder-tjp2.onrender.com/request/${status}/${user._id}`, {}, { withCredentials: true });
@@ -25,10 +27,15 @@ const UserCards = ({ feedData }) => {
     setPopUp(true);
     setData((prev) => prev.filter((u) => u._id !== user._id)); // remove from list
     console.log(dir+"sent sucessfully")
-  } catch (err) {
+  }
+   catch (err) {
     console.log(err);
     alert("Something went wrong, please refresh the page")
   }
+  finally{
+    setIsLoading(false);
+  }
+
 };
 
   useEffect(()=>{
@@ -59,8 +66,8 @@ const UserCards = ({ feedData }) => {
   </div>
    </div>
   <div className='send_connection_btn flex justify-center  flex-wrap gap-6 gap-15 md:gap-16 lg:gap-20 lg:pb-0 pb-25 mt-5 lg:mt-5'>
-    <button className="btn btn-soft bg-red-500 color-white btn1 ignore_btn " disabled={!currentCardId} onClick={()=>handleSendRequests("left",currentCard)}><i className="fa-solid fa-left-long z-100"></i>Ignore</button>
-    <button className="btn bg-green-500 text-white btn2 connect_btn" disabled={!currentCardId} onClick={()=> handleSendRequests("right",currentCard)}>Connect<i className="fa-solid fa-right-long"></i></button>
+    <button className="btn btn-soft bg-red-500 color-white btn1 ignore_btn " disabled={!currentCardId || loading} onClick={()=>handleSendRequests("left",currentCard)}>{loading?"Wait...":(<><i className="fa-solid fa-left-long z-100"></i> Ignore</>)}</button>
+    <button className="btn bg-green-500 text-white btn2 connect_btn" disabled={!currentCardId || loading} onClick={()=> handleSendRequests("right",currentCard)}>{ loading ? "Wait..." : (<>Connect <i className="fa-solid fa-right-long"></i></>)}</button>
   </div>
  
 </>
