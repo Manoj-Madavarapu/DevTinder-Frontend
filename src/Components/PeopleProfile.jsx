@@ -57,7 +57,7 @@ const PeopleProfile = () => {
             </div>
             <div className="text-center ">
               <p className="text-[22px] font-bold  text_shadow name">{userData.firstName+" "+userData.lastName}
-                 {userData?.isPremium && <span className="inline-flex ml-3 bg-blue-500 rounded-full  p-1 relative -top-1"><i class="fa-solid fa-check text-[12px]"></i></span>}
+                 {userData?.isPremium && <span className="inline-flex ml-3 bg-blue-500 rounded-full  p-1 relative -top-1"><i className="fa-solid fa-check text-[12px]"></i></span>}
               </p>
               <p className="text-base  text_shadow font-bold mb-4">{userData.role}</p>
               <h1 className="text-left text-[16px] lg:text-[18px] font-bold light_shadow">About</h1>
