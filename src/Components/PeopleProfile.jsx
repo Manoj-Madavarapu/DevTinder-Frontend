@@ -126,7 +126,7 @@ const PeopleProfile = () => {
           Ignore
         </button>
         </>}
-        </>:<p className="font-bold -mt-2 connect_btn">Request Send Successfully</p>}
+        </>:<p className="font-bold -mt-2 connect_btn px-4 py-2">Request Send Successfully</p>}
         </>)
         }
       </div>
