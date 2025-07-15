@@ -532,11 +532,11 @@
     font-size: 14px;
   }
   .searchUser_div{
-    background-color: rgba(0, 0, 0, 0.725);
+    background-color: rgba(0, 0, 0, 0.947);
     padding: 4px 0px 2px 4px;
   }
   .inner_div:hover{
-    background-color: rgba(0, 0, 0, 0.692);
+    background-color: rgba(0, 0, 0, 0.267);
 }
 }
 

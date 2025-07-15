@@ -37,8 +37,8 @@ const Profile = () => {
               </div>
             </div>
             <div className="flex gap-20">
-              <p className="px-4  text-[18px] lg:text-[20px] font-bold text-[#0d141c] light_shado text-white !text-gray-200">Age : <span className="">{userData.age?userData.age:" "}</span></p>
-              <p className="px-4 text-[18px]  lg:text-[20px] font-bold text-[#0d141c] light_shado text-white !text-gray-200">Gender : {userData.gender}</p>
+              <p className="px-4  text-[18px] lg:text-[20px] font-bold text-[#0d141c] light_shado text-white !text-gray-300">Age : <span className="">{userData.age?userData.age:" "}</span></p>
+              <p className="px-4 text-[18px]  lg:text-[20px] font-bold text-[#0d141c] light_shado text-white !text-gray-300">Gender : {userData.gender}</p>
             </div>
             {/* Skills */}
             <h2 className="px-4 pb-3 pt-5 text-[18px]  lg:text-[20px] font-bold text-[#0d141c] light_shado text-white !text-gray-300">Skills : </h2>
@@ -52,7 +52,7 @@ const Profile = () => {
             </div>
             :<p className="text-base font-bold text-[rgb(120,113,113)] ml-8">Please add your skills</p>}
 
-            <h2 className="px-4 pb-3 pt-5 text-[18px]  lg:text-[20px] font-bold text-white !text-gray-300 light_shado">Email :  <span className="text-[18px] text-white !text-gray-200">{userData.email}</span></h2>
+            <h2 className="px-4 pb-3 pt-5 text-[18px]  lg:text-[20px] font-bold text-white !text-gray-300 light_shado">Email :  <span className="text-[18px] text-white !text-gray-300">{userData.email}</span></h2>
           </div>
         </div>
       </div>
