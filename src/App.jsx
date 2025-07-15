@@ -23,9 +23,9 @@ const App = () => {
       <Suspense fallback={<div className="text-white p-5">Loading...</div>}>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
+        <Route path="/devTinder/login" element={<Login/>}></Route>
+        <Route path="/devTinder/sign-up" element={<SignUp/>}></Route>
         <Route path="/devTinder" element={<Body/>}>
-          <Route path="/devTinder/login" element={<Login/>}></Route>
-          <Route path="/devTinder/sign-up" element={<SignUp/>}></Route>
           <Route path="/devTinder/profile" element={<Profile/>}></Route>
           <Route path="/devTinder/feed" element={<Feed/>}></Route>
           <Route path="/devTinder/Profile/Edit" element={<EditProfile/>}></Route>

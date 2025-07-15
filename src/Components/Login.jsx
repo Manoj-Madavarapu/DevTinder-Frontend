@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
+import Nav from './Nav';
 
 const Login = () => {
   let [email,setEmail]=useState("manojmadavarapu7@gmail.com");
@@ -42,7 +43,8 @@ const Login = () => {
     }
   }
   return (
-    <>
+    <div className='body_bg h-screen'>
+      <Nav></Nav>
       <h1 className='absolute left-4 top-23 md:left-20 md:top-25 font-bold cursor-pointer text-[16px] text-sm sm:text-base back px-4'onClick={()=>navigate("/")}><i className="fa-solid fa-arrow-left"></i> Go back to Home Page</h1>
       <div className='flex  items-center justify-center mt-20 ' >
         <img src="/images/Collaboration at devTinder Office.png" alt=""  className='hidden md:block w-100 h-100 card_shadow_img'/>
@@ -67,7 +69,7 @@ const Login = () => {
               </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

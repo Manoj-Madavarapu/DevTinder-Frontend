@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
+import Nav from './Nav';
 
 const SignUp = () => {
   let [email,setEmail]=useState("manoj@gmail.com");
@@ -46,10 +47,11 @@ const SignUp = () => {
     }
   }
   return (
-    <>
+    <div className='body_bg h-screen'>
+      <Nav></Nav>
       <div className='flex flex-col md:flex-row items-center justify-center mt-10 px-4' >
         <img src="/images/ChatGPT Image Jun 29, 2025, 12_36_32 AM.png" alt=""  className='hidden md:block w-110 h-125 card_shadow_img '/>
-        <div className="card bg-base-300 w-110 w-[90%] sm:w-[400px]  flex flex-col justify-center card_shadow pl-3 pb-3 p-4">
+        <div className="card bg-base-300 w-100 w-[97%] md:w-[90%] lg:w-[29%] sm:w-[400px]  flex flex-col justify-center card_shadow lg:pl-3 md:pl-2 pl-1 pb-3 lg:p-4 md:p-3 px-2 py-1 lg:mt-0 md:mt-0 mt-8">
               <div className="card-body w-full m-auto">
                 <h1 className='font-bold text-xl mb-2'>Sign Up</h1>
                 <fieldset className="fieldset  w-full flex flex-col gap-4">
@@ -74,7 +76,7 @@ const SignUp = () => {
               </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
