@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import Nav from './Nav';
 
 const Login = () => {
-  let [email,setEmail]=useState("");
-  let [password,setPassword]=useState("");
+  let [email,setEmail]=useState("manojmadavarapu7@gmail.com");
+  let [password,setPassword]=useState("Manoj@123");
   let [showPassword,setShowPaassword]=useState(false);
   let [isLogin,setIsLogin]=useState(true);
   let [error,setError]=useState();

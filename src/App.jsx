@@ -12,6 +12,7 @@ import PricingPolicy from './Components/PricingPolicy.jsx';
 import ShippingPolicy from './Components/ShippingPolicy.jsx';
 import RefundPolicy from './Components/RefundPolicy.jsx';
 import PrivacyPolicy from './Components/PrivacyPolicy.jsx';
+import AboutUs from './Components/About.jsx';
 const Feed=lazy(()=>import("./Components/Feed.jsx"))
 const EditProfile=lazy(()=>import("./Components/EditProfile.jsx"))
 const Connections=lazy(()=>import("./Components/Connections.jsx"))
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/devTinder/login" element={<Login/>}></Route>
         <Route path="/devTinder/sign-up" element={<SignUp/>}></Route>
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/pricing-policy" element={<PricingPolicy />} />
