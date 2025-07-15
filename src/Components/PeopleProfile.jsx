@@ -66,7 +66,7 @@ const PeopleProfile = () => {
       </div>
       {/* <h2 className="px-4 pb-2 pt-3 text-[18px] font-bold text-[#0d141c] light_shadow text-white">Skills : </h2> */}
       <div className="flex flex-wrap gap-3 mt-2 pt-1 items-center">
-          <h2 className="pl-4 pb-2 pt-3 text-[16px] lg:text-[18px] font-bold text-[#0d141c] light_shadow !text-white !text-gray-300">Skills : </h2>
+          <h2 className="pl-4 pb-2 pt-3 text-[16px] lg:text-[18px] font-bold text-[#0d141c] light_shadow text-white !text-gray-300">Skills : </h2>
         {userData?.skills?.map((skill,index) => (
           <div key={index} className=" h-7 lg:h-8 rounded-lg bg-[#e7edf4] px-3 lg:px-4 flex items-center mt-2 box_shadow">
             <p className="text-sm font-medium text-[#0d141c]">{skill}</p>
