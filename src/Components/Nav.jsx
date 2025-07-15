@@ -11,6 +11,7 @@ let Nav=({premiumUser})=>{
   let [searchBox,setSearchBox]=useState(false);
   let [inputValue,setInputValue]=useState("");
   let [isMobile,setIsMobile]=useState(window.innerWidth<900);
+  let [loading,setLoading]=useState(false);
 
   let user=useSelector(store=>store.user)
   let requestData=useSelector(store=>store.request);
@@ -33,6 +34,7 @@ let Nav=({premiumUser})=>{
   // }
   
   let handleLogout=async()=>{
+    setLoading(true);
     try{
        let res=await axios.post("https://devtinder-tjp2.onrender.com/logout",{},{withCredentials:true});
        dispatch(removeUser());
@@ -41,10 +43,13 @@ let Nav=({premiumUser})=>{
       sessionStorage.removeItem("popUpShown");
     }
     catch(err){
-      if(err.response.status===404){
+      if(err.response.status===404 ){
         return <ErrorPage />;
       }
       console.error("Logout failed:", err);
+    }
+    finally{
+       setLoading(false);
     }
   }
 
@@ -154,7 +159,7 @@ let Nav=({premiumUser})=>{
                     Premium Membership
                     {premiumUser?.isPremium && <span className="bg-green-500 w-5 h-5 rounded-full flex m-auto justify-center items-center"><i className="fa-solid fa-check font-bold"></i></span>}
                   </Link></li>
-                <li><a onClick={handleLogout}>Logout</a></li>
+                <li><a onClick={handleLogout}>{loading ?"Loging out...":"Logout"}</a></li>
               </ul>
             </div>
           </div>}

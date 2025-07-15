@@ -4,7 +4,7 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <>
+    <div className='body_bg'>
     <div className="p-6 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-4">About Us</h1>
       <p className="mb-2">
@@ -36,7 +36,7 @@ const AboutUs = () => {
 
         <div>
           <label className="block mb-1 font-medium">Message</label>
-          <textarea rows="4" placeholder="Your message..." className="textarea textarea-bordered w-full" />
+          <textarea rows="4" placeholder="Your message..." className="!textarea !textarea-bordered w-full !bg-transparent" />
         </div>
 
         <button type="submit" className="btn btn-primary">Send Message</button>
@@ -48,7 +48,7 @@ const AboutUs = () => {
         <p><strong>Location:</strong> Hyderabad, Telangana, India</p>
       </div>
     </div>
-    </>
+    </div>
   );
 };
 

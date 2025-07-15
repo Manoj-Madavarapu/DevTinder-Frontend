@@ -4,7 +4,8 @@ import axios from 'axios';
 const Premium = () => {
   let [selectedPlan,setSelectedPlan]=useState(null);
   let [premiumUser,setPremiumUser]=useState()
-  let[loading,setLoading]=useState(false);
+  // let[loading,setLoading]=useState(false);
+  const [loadingPlan, setLoadingPlan] = useState(null);
   // this is used to check wheather the user is having premium membership or not
   const isPremiumUser=async ()=>{
     try{
@@ -22,8 +23,10 @@ const Premium = () => {
   },[]) 
 
   const handlePayment=async (membershipType)=>{
+    alert("Please avoid payments using QRcode! we are facing some issues")
      console.log(membershipType)
-     setLoading(true)
+    //  setLoading(true)
+    setLoadingPlan(membershipType)
     try{
       const order=await axios.post("https://devtinder-tjp2.onrender.com/payment/create",{
         membershipType
@@ -46,6 +49,7 @@ const Premium = () => {
         handler: function (response) {
           alert('Payment successful!');
           isPremiumUser()
+          window.location.reload()
         },
         prefill: {
           name: notes.firstName+" "+ notes.lastName,
@@ -58,12 +62,10 @@ const Premium = () => {
       };
 
       const rzp = new window.Razorpay(options);
-
-       rzp.on("payment.failed", function (response) {
-      alert("❌ Payment failed! Please try again.");
-      console.log("💥 Payment failed:", response.error);
-    });
-
+      //  rzp.on("payment.failed", function (response) {
+      //  alert("❌ Payment failed! Please try again.");
+      //  console.log("💥 Payment failed:", response.error);
+      //  });
       rzp.open();
 
     }
@@ -71,7 +73,8 @@ const Premium = () => {
       console.log("Error"+err.message)
     }
     finally{
-      setLoading(false);
+      // setLoading(false);
+      setLoadingPlan(null)
     }
 
   }
@@ -152,7 +155,14 @@ const Premium = () => {
                       ? '!bg-[rgb(228,171,65)] '
                       : 'bg-[#f0f2f5] '}`} 
                     onClick={()=>handlePayment(plan.name)}>
-                    {loading ? "Please wait..."  : (selectedPlan===plan.name?"Selected":premiumUser?.membershipType==="Pro"?"Upgrade":"Select")}
+                    {/* {loading ? "Please wait..."  : (selectedPlan===plan.name?"Selected":premiumUser?.membershipType==="Pro"?"Upgrade":"Select")} */}
+                     {loadingPlan === plan.name
+    ? "Please wait..."
+    : selectedPlan === plan.name
+    ? "Selected"
+    : premiumUser?.membershipType === "Pro"
+    ? "Upgrade"
+    : "Select"}
                     </button>
                   <div className="flex flex-col gap-2">
                     {plan.features.map((feature, i) => (
