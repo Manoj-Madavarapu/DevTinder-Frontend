@@ -7,6 +7,11 @@ const SignUp=lazy(()=>import("./Components/SignUp.jsx"))
 const Profile=lazy(()=>import("./Components/Profile.jsx"))
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore.js';
+import Terms from './Components/Terms.jsx';
+import PricingPolicy from './Components/PricingPolicy.jsx';
+import ShippingPolicy from './Components/ShippingPolicy.jsx';
+import RefundPolicy from './Components/RefundPolicy.jsx';
+import PrivacyPolicy from './Components/PrivacyPolicy.jsx';
 const Feed=lazy(()=>import("./Components/Feed.jsx"))
 const EditProfile=lazy(()=>import("./Components/EditProfile.jsx"))
 const Connections=lazy(()=>import("./Components/Connections.jsx"))
@@ -25,6 +30,11 @@ const App = () => {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/devTinder/login" element={<Login/>}></Route>
         <Route path="/devTinder/sign-up" element={<SignUp/>}></Route>
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/pricing-policy" element={<PricingPolicy />} />
+        <Route path="/shipping-policy" element={<ShippingPolicy />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/devTinder" element={<Body/>}>
           <Route path="/devTinder/profile" element={<Profile/>}></Route>
           <Route path="/devTinder/feed" element={<Feed/>}></Route>
