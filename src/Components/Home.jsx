@@ -23,7 +23,7 @@ const DevTinder = () => {
           </div>
           <h1 className=" text-[28px] sm:text-[32px] md:text-[34px] font-bold text-center pt-4 lg:pt-6 md:pt-6 pb-1 lg:welcome md:welcome welcome_small"> Welcome to DevTinder </h1>
           <h2 className=" text-[18px] md:text-[24px]  lg:text-[25px] font-bold text-center pb- highlight !text-white">Connect With People Who Speak Your Thoughts.</h2>
-          <p className=" text-base  lg:text-center md:text-center px-1 lg:px-4 md:px-4 pt-1 font-bold text-white">
+          <p className=" text-base text-justify  lg:text-center md:text-center px-1 lg:px-4 md:px-4 pt-1 font-bold text-white">
             DevTinder is the place where code meets collaboration. Whether
             you're a frontend wizard, backend architect, full-stack explorer, or
             just starting your dev journey — DevTinder helps you discover,
@@ -33,7 +33,7 @@ const DevTinder = () => {
           <div className="flex flex-col gap-10  py-6 lg:py-8">
             <div className="flex flex-col gap-1">
               <h1 className=" text-[26px] sm:text-[32px] md:text-[32px] font-bold max-w-[720px] highlight">Connect, Collaborate, Create</h1>
-              <p className="text-base font-bold max-w-[720px]"> Network with Purpose</p>
+              <p className="text-base font-bold max-w-[720px] text-white"> Network with Purpose</p>
             </div>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] sm:grid-cols-2 md:grid-cols-3 gap-3 lg:-mt-4 md:-mt-4 -mt-5">
             {/* Card 1 */}
@@ -45,7 +45,7 @@ const DevTinder = () => {
                 <h2 className="text-base font-bold leading-tight text-[#181411]">
                   Find Coding Partners
                 </h2>
-                <p className="text-sm font-normal leading-normal text-[#887263]">
+                <p className="text-sm font-normal text-justify leading-normal text-[#887263]">
                   Find coding partners for your next project or hackathon.
                 </p>
               </div>
@@ -59,8 +59,8 @@ const DevTinder = () => {
                 <h2 className="text-base font-bold leading-tight text-[#181411]">
                   Grow Your Network
                 </h2>
-                <p className="text-sm font-normal leading-normal text-[#887263]">
-                  Expand your professional network with like-minded people.
+                <p className="text-sm font-normal text-justif leading-normal text-[#887263]">
+                  Expand your professional network with like-minded people and grow together.
                 </p>
               </div>
             </div>
@@ -73,7 +73,7 @@ const DevTinder = () => {
                 <h2 className="text-base font-bold leading-tight text-[#181411]">
                   Learn From Best
                 </h2>
-                <p className="text-sm font-normal leading-normal text-[#887263]">
+                <p className="text-sm font-normal text-justify leading-normal text-[#887263]">
                   Learn from experienced developers and improve your skills.
                 </p>
               </div>

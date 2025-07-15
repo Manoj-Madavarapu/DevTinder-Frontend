@@ -61,8 +61,8 @@ const PeopleProfile = () => {
         </div>
       </div>
       <div className="flex  gap-20">
-        {userData?.age && <p className="px-4  text-[16px] lg:text-[18px] font-bold text-[#0d141c] light_shadow text-white">Age : <span className="text-white text-[16px] lg:text-[18px]">{userData.age}</span></p>}
-        <p className="px-4 text-[16px] lg:text-[18px] font-bold text-[#0d141c] light_shadow text-white">Gender : <span className="text-white text-[16px] lg:text-[18px]">{userData.gender}</span></p>
+        {userData?.age && <p className="px-4  text-[16px] lg:text-[18px] font-bold text-[#0d141c] light_shadow text-white !text-gray-200">Age : <span className="text-white !text-gray-200 text-[16px] lg:text-[18px]">{userData.age}</span></p>}
+        <p className="px-4 text-[16px] lg:text-[18px] font-bold text-[#0d141c] light_shadow text-white !text-gray-200">Gender : <span className="text-white !text-gray-200 text-[16px] lg:text-[18px]">{userData.gender}</span></p>
       </div>
       {/* <h2 className="px-4 pb-2 pt-3 text-[18px] font-bold text-[#0d141c] light_shadow text-white">Skills : </h2> */}
       <div className="flex flex-wrap gap-3 mt-2 pt-1 items-center">
@@ -73,7 +73,7 @@ const PeopleProfile = () => {
           </div>
         ))}
       </div>
-      {status==="friends" && <h2 className="px-4 pb-3 pt-5 text-[16px] lg:text-[18px] font-bold text-white light_shadow !text-white">Email : <span className="text-[16px] lg:text-[18px] text-white"><a 
+      {status==="friends" && <h2 className="px-4 pb-3 pt-5 text-[16px] lg:text-[18px] font-bold text-white light_shadow text-white !text-gray-200">Email : <span className="text-[16px] lg:text-[18px] text-white !text-gray-200"><a 
       // href={`mailto:${userData.email}`}
       href={`https://mail.google.com/mail/?view=cm&fs=1&to=${userData.email}`}
       target="_blank">{userData.email}</a></span></h2>}
@@ -82,7 +82,7 @@ const PeopleProfile = () => {
         {status==="friends" &&
            (
             <>
-           <button className="px-1 pr-3 lg:px-6 py-2 font-bold text-[#E2B84B] pointer-events-none -mt-5">
+           <button className="pl-2 !pr-3 lg:px-6 py-2 font-bold text-[#E2B84B] pointer-events-none -mt-5">
            You are already connected 
         </button>
         <button onClick={()=>navigate(`/devTinder/Chating/${userData._id}`,{state:userData})} className="connect_btn px-5 -ml-6 -mt-5">Start Conversation..</button>
