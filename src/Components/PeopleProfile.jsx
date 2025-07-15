@@ -38,6 +38,7 @@ const PeopleProfile = () => {
     }
     finally{
       setIsLoading(false);
+
     }
   }
   useEffect(()=>{
@@ -116,12 +117,16 @@ const PeopleProfile = () => {
         (<>
         {!popUp?
         <>
-        <button className="px-6 py-2 bg-geen-800 hover:bg-gren-700 text-white font-semibold rounded-lg shadow-md transition duration-300 bg-amber-600 hover:bg-amber-500 connect_btn" onClick={()=>handleRequest("interested",userData._id)}>
-          {loading?"Please wait...":"Connect"}
+        ( {loading?<p className="font-bold -mt-2">Please Wait...</p>:
+          <>
+          <button className="px-6 py-2 bg-geen-800 hover:bg-gren-700 text-white font-semibold rounded-lg shadow-md transition duration-300 bg-amber-600 hover:bg-amber-500 connect_btn" onClick={()=>handleRequest("interested",userData._id)}>
+          Connect
         </button>
         <button className="px-6 py-2 bg-rd-800 hover:bg-gry-300 text-white font-semibold rounded-lg shadow-md transition duration-300 bg-gray-800 hover:bg-gray-700 ignore_btn " onClick={()=>handleRequest("ignored",userData._id)} disabled={loading}>
           Ignore
-        </button></>:<p className="font-bold -mt-2">Request Send...</p>}
+        </button>
+        </>})
+        </>:<p className="font-bold -mt-2">Request Send Successfully</p>}
         </>)
         }
       </div>
