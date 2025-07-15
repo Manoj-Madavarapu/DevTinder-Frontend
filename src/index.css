@@ -24,6 +24,10 @@
     cursor: pointer;
 
 }
+.welcome_small{
+     color: rgb(249, 158, 3);
+    text-shadow: 5px 5px 7px black;
+}
 .welcome:hover{
     color: rgb(248, 102, 4);
     color: rgb(255, 162, 0);

@@ -37,11 +37,11 @@ const Profile = () => {
               </div>
             </div>
             <div className="flex gap-20">
-              <p className="px-4  text-[18px] lg:text-[20px] font-bold text-[#0d141c] light_shado !text-black">Age : <span className="">{userData.age?userData.age:" "}</span></p>
-              <p className="px-4 text-[18px]  lg:text-[20px] font-bold text-[#0d141c] light_shado !text-black">Gender : {userData.gender}</p>
+              <p className="px-4  text-[18px] lg:text-[20px] font-bold text-[#0d141c] light_shado !text-white">Age : <span className="">{userData.age?userData.age:" "}</span></p>
+              <p className="px-4 text-[18px]  lg:text-[20px] font-bold text-[#0d141c] light_shado !text-white">Gender : {userData.gender}</p>
             </div>
             {/* Skills */}
-            <h2 className="px-4 pb-3 pt-5 text-[18px]  lg:text-[20px] font-bold text-[#0d141c] light_shado !text-black">Skills : </h2>
+            <h2 className="px-4 pb-3 pt-5 text-[18px]  lg:text-[20px] font-bold text-[#0d141c] light_shado !text-white">Skills : </h2>
             {userData && userData.skills.length>0 ?
             <div className="flex flex-wrap gap-3 px-3 py-0 lg:p-3">
               {userData.skills.map((skill,index) => (
@@ -52,7 +52,7 @@ const Profile = () => {
             </div>
             :<p className="text-base font-bold text-[rgb(120,113,113)] ml-8">Please add your skills</p>}
 
-            <h2 className="px-4 pb-3 pt-5 text-[18px]  lg:text-[20px] font-bold text-black light_shado">Email :  <span className="text-[18px] ">{userData.email}</span></h2>
+            <h2 className="px-4 pb-3 pt-5 text-[18px]  lg:text-[20px] font-bold text-white light_shado">Email :  <span className="text-[18px] text-white">{userData.email}</span></h2>
           </div>
         </div>
       </div>

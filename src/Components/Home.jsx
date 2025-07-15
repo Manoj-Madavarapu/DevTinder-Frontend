@@ -9,10 +9,10 @@ const DevTinder = () => {
     <>
     <div className="relative flex min-h-screen flex-col items-center overflow-x-hidden body_bg" >
        <Nav></Nav>
-      <div className="flex flex-col h-full flex-grow px-10 sm:px-10 md:px-20 lg:px-40 py-5 justify-center text-white mb-5">
+      <div className="flex flex-col h-full flex-grow px-6 sm:px-10 md:px-20 lg:px-40 py-5 justify-center text-white mb-5">
         <div className="flex flex-col flex-1 max-w-[960px] w-full text-white">
           <div>
-            <div className="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-white rounded-xl min-h-[218px] h-[230px]"
+            <div className="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-white rounded-xl min-h-[180px] h-[180px] lg:h-[230px] md:h-[230px]"
               // style={{
               //   backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 25%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDm-mZq-j-OnS67S7CqZNy2qHaD1z_k7WlVj9ZWrZz4X7kzuOB3e4Je_0ep0wh5XzW2hZAAh-oI5uX4DILaLkGf7WeYsusYlZ1Gf_78Thg1lpez_KCh4SogEnPr2gqavh5Fv5QcG-vHbqBn6JFT04cddtjEvL4VUW2PoE8jqRymnr9vd1a7Qyyg3sRgS29Wd8qjUIzOYY3YPo21Plm4GCP0eBATSfzhn7-SpTAE1KxFJ5Uls50YX2-RgIRj88toD1xVccQ9BoLRGSg")`,
               // }}
@@ -21,21 +21,21 @@ const DevTinder = () => {
               {/* <img src="public/images/DevTinder_ Connecting Ideas and People.png" alt="" className="w-300 h-full object-fit"/> */}
             </div>
           </div>
-          <h1 className=" text-[28px] sm:text-[32px] md:text-[34px] font-bold text-center pt-6 pb-1 welcome"> Welcome to DevTinder </h1>
-          <h2 className=" text-[25px] font-bold text-center pb- highlight !text-white">Connect with People Who Speak Your Thoughts.</h2>
-          <p className=" text-base  text-center px-4 pt-1 font-bold">
+          <h1 className=" text-[28px] sm:text-[32px] md:text-[34px] font-bold text-center pt-4 lg:pt-6 md:pt-6 pb-1 lg:welcome md:welcome welcome_small"> Welcome to DevTinder </h1>
+          <h2 className=" text-[18px] md:text-[24px]  lg:text-[25px] font-bold text-center pb- highlight !text-white">Connect With People Who Speak Your Thoughts.</h2>
+          <p className=" text-base  lg:text-center md:text-center px-1 lg:px-4 md:px-4 pt-1 font-bold text-white">
             DevTinder is the place where code meets collaboration. Whether
             you're a frontend wizard, backend architect, full-stack explorer, or
             just starting your dev journey — DevTinder helps you discover,
             match, and connect with other developers based on interests, skills,
             and goals.
           </p>
-          <div className="flex flex-col gap-10  py-8">
+          <div className="flex flex-col gap-10  py-6 lg:py-8">
             <div className="flex flex-col gap-1">
               <h1 className=" text-[26px] sm:text-[32px] md:text-[32px] font-bold max-w-[720px] highlight">Connect, Collaborate, Create</h1>
               <p className="text-base font-bold max-w-[720px]"> Network with Purpose</p>
             </div>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] sm:grid-cols-2 md:grid-cols-3 gap-3 -mt-4">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] sm:grid-cols-2 md:grid-cols-3 gap-3 lg:-mt-4 md:-mt-4 -mt-5">
             {/* Card 1 */}
             <div className="flex flex-col gap-3 border border-[#e5e0dc] bg-white p-4 rounded-lg">
               <div className="text-[#181411]">
@@ -80,8 +80,8 @@ const DevTinder = () => {
             </div>
           </div>
           </div>
-          <div className="flex justify-center pb-10 text-center">
-            <button className="btn btn-primary get-started" onClick={()=>navigate("/devTinder/login")}>Get Started</button>
+          <div className="flex justify-center pb-10 mt-2 lg:mt-0 md:mt-0 text-center">
+            <button className="btn btn-primary get-started !py-3" onClick={()=>navigate("/devTinder/login")}>Get Started</button>
           </div>
         </div>
       </div>

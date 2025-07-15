@@ -18,6 +18,7 @@ const EditProfile = () => {
   const [about, setAbout] = useState("");
   const [image,setImage]=useState("");
   const [error,setError]=useState(false)
+  const [upadting,setUpdating]=useState(false);
   const maxAboutLength = 500;
   const dispatch=useDispatch()
   let navigate=useNavigate();
@@ -38,6 +39,7 @@ const EditProfile = () => {
   }, [userData]);
 
   const handleProfileUpadte=async ()=>{
+    setUpdating(true);
     try{
         // const skillsArray = skills
         const skillsArray= (Array.isArray(skills) ? skills.join(",") : (skills || ""))
@@ -59,6 +61,9 @@ const EditProfile = () => {
     catch(err){
         setError(true)
         console.log("Error",err.message)
+    }
+    finally{
+      setUpdating(false);
     }
 
   }
@@ -129,7 +134,7 @@ const EditProfile = () => {
         className="mt-1  text-white px-6 py-2 saveChanges_btn cursor-pointer font-bold"
         onClick={()=>{handleProfileUpadte()}}
       >
-        Save Changes
+        {upadting?"Updating Changes...":"Save Changes"}
       </button>
       </div>
     </div>
