@@ -58,6 +58,12 @@ const Premium = () => {
       };
 
       const rzp = new window.Razorpay(options);
+
+       rzp.on("payment.failed", function (response) {
+      alert("❌ Payment failed! Please try again.");
+      console.log("💥 Payment failed:", response.error);
+    });
+
       rzp.open();
 
     }
