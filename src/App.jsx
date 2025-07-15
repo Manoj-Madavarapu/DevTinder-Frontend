@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/devTinder/login" element={<Login/>}></Route>
         <Route path="/devTinder/sign-up" element={<SignUp/>}></Route>
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about-and-ContactUs" element={<AboutUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/pricing-policy" element={<PricingPolicy />} />

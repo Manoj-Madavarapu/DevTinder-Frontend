@@ -9,7 +9,7 @@ const Footer = () => {
           Copyright © {new Date().getFullYear()} - All rights reserved by Manoj Naidu Madavarapu
         </p>
         <div className="flex flex-wrap justify-center gap-4 mt-1 text-sm">
-          <Link to="/about" className="hover:underline">About Us</Link>
+          <Link to="/about-and-ContactUs" className="hover:underline">About Us</Link>
           <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link>
           <Link to="/terms" className="hover:underline">Terms & Conditions</Link>
           <Link to="/pricing-policy" className="hover:underline">Pricing Policy</Link>
