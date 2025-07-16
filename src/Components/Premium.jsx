@@ -84,13 +84,13 @@ const Premium = () => {
     {
       name: 'Pro',
       price: '₹ 11',
-      features: ['Unlimited messaging', 'Enhanced profile visibility', 'Priority support', 'Exclusive features']
+      features: ['Premium Verified', 'Pro Member', 'Priority support', 'Exclusive features']
     },
     {
       name: 'VIP',
       price: '₹ 29',
       badge: 'Best Value',
-      features: ['Unlimited messaging', 'Maximum profile visibility', '24/7 priority support', 'All exclusive features']
+      features: ['Premium Verified', 'VIP Gold Member', '24/7 priority support', 'All exclusive features']
     }
   ];
 
