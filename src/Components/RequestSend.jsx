@@ -39,7 +39,7 @@ useEffect(()=>{
       <main className="flex  flex-col items-center px-4 sm:px-6 md:px-10 w-full">
         <div className="flex  max-w-[960px] w-full flex-col">
           <div className="flex flex-wrap justify-between gap-3 p-4">
-            <p className="text-white text-[20px] font-bold your_connections">Connection Request's Send by you</p>
+            <p className="text-white text-[16px] lg:text-[20px] sm:text-[16px]  md:text-[18px] font-bold your_connections">Connection Request's Send by you</p>
           </div>
            {store?.length===0? (<><h1 className="m-auto mt-20 font-bold text-2xl">No Requests found</h1></>):
            (<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2  md:gap-4 sm:gap-2 lg:gap-6 lg:pb-4 md:pb-3 sm:pb-1">
