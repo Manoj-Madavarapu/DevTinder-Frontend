@@ -41,9 +41,9 @@ useEffect(()=>{
   // if(store.length===0) return <><h1 className="">No Connections found</h1></>
   return store ?(
     <>
-    <div className="relative flex flex-col w-full body-bg over_height">
+    <div className="relative flex flex-col w-full body-bg over_height sm:mb-5">
       <main className="flex flex-col flex-1 justify-center items-center px-4 pt-2">
-        <div className="flex max-w-[960px] w110 sm:w-150 lg:w-200 md:w-150 flex-col lg:px-8 md:px-8 sm:px-3 lg:mt-0">
+        <div className="flex max-w-[960px] w110 sm:w-150 lg:w-200 md:w-150 flex-col lg:px-8 md:px-8 sm:px-2 lg:mt-0">
           <div className="flex flex-wrap justify-between gap-3 p-4">
             <p className="text-white text-2xl sm:text-3xl md:text-4xl font-bold your_connections mb-3"> Your Connections  &nbsp;<i className="fa-solid fa-handshake-angle text-[20px]"></i></p>
           </div>
