@@ -25,7 +25,7 @@ const Premium = () => {
   const handlePayment=async (membershipType)=>{
     setLoadingPlan(membershipType)
     setSelectedPlan(membershipType)
-    alert("Please avoid payments using QRcode! we are facing some issues")
+    alert("Please avoid payments using QRcode! we are facing some issues, use alternate payment methods")
      console.log(membershipType)
     //  setLoading(true)
     try{
