@@ -42,7 +42,7 @@ useEffect(()=>{
             <p className="text-white text-[20px] font-bold your_connections">Connection Request's Send by you</p>
           </div>
            {store?.length===0? (<><h1 className="m-auto mt-20 font-bold text-2xl">No Requests found</h1></>):
-           (<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 pb-4">
+           (<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2 pb-4">
            {getPages().map(x=>{
             const {firstName,lastName,age,role,about,gender,photoUrl,isPremium}=x.toUserId
             const _id=x._id
