@@ -88,7 +88,7 @@ const PeopleProfile = () => {
         {status==="friends" &&
            (
             <>
-           <button className="pl-2 !pr-5 lg:px-6 py-2 font-bold text-[#E2B84B] pointer-events-none -mt-5">
+           <button className="pl-2 !pr-5 sm:pr-2 lg:px-6 py-2 font-bold text-[#E2B84B] pointer-events-none -mt-5">
            You are already connected 
         </button>
         <button onClick={()=>navigate(`/devTinder/Chating/${userData._id}`,{state:userData})} className="connect_btn px-5 -ml-6 -mt-5">Start Conversation..</button>

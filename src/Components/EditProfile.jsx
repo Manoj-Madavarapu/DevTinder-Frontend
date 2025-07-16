@@ -70,8 +70,8 @@ const EditProfile = () => {
 
   if(error) return <Error/>
   return userData?(
-    <div className="flex flex-col justify-center items-center w-full py-3 px-2 ">
-      <div className='profile_border flex flex-col justify-center items-center pt-6  pb-5 px-2 md:px-6 lg:px-20'>
+    <div className="flex flex-col justify-center items-center w-full py-3 px-2 sm:pb-3">
+      <div className='profile_border flex flex-col justify-center items-center pt-6  pb-5 px-2 sm:px-2 md:px-6 lg:px-20'>
       <h1 className="text-3xl font-bold my-1 edit_profile_title">Edit Profile</h1>
       <div className="flex flex-wrap justify-center gap-3 lg:gap-20 md:gap-10 edit_div px-3">
         <div className="w-85 md:w-80 lg:w-80">

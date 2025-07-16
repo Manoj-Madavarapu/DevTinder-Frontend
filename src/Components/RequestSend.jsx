@@ -36,7 +36,7 @@ useEffect(()=>{
 
  return store ? (
     <div className="relative flex flex-col body-bg over_height">
-      <main className="flex  flex-col items-center">
+      <main className="flex  flex-col items-center sm:px-3">
         <div className="flex  max-w-[960px] flex-col">
           <div className="flex flex-wrap justify-between gap-3 p-4">
             <p className="text-white text-[20px] font-bold your_connections">Connection Request's Send by you</p>

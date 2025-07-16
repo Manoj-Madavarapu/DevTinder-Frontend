@@ -13,7 +13,7 @@ const Profile = () => {
       <div>
         {/* <a href="mailto:someone@example.com">someone@example.com</a> */}
 
-        <div className="flex items_center justify-center px-2">
+        <div className="flex items_center justify-center px-2 pb-3">
           <div className={`flex flex-col mt-10 profile_border py-10 px-3 lg:px-10 md:px-7 realtive w-220 ${ premiumUser?.membershipType==="VIP"?"VIP_bg":""} `} >
               <h1 className="text-xl lg:text-2xl font-bold your_profile -mb-10 absolute -top-5  lg:-top-2 text-white">Your Profile </h1>
               {/* <h1 className="text-xl lg:text-2xl  -mb-10 absolute right-20 ">Your Profile </h1> */}

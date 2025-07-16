@@ -34,7 +34,7 @@ const SwipeCard = ({ user, onSwipeEnd,index,feedData }) => {
       whileTap={{ scale: 1.05 }}  
       transition={{ type: 'spring', stiffness: 300 }}
     >
-    <div className="card bg-white image-full  w-[345px w[300px] sm:w-[300px] md:min-w-[345px] lg:min-w-[360px] sm:h-[450px] md:h-[460px] card_shadow2 lg:h-[460px] overflow-hidden relative">
+    <div className="card bg-white image-full  w-[345px w[300px] sm:w-[300px] md:min-w-[345px] lg:min-w-[360px] h-[460px] card_shadow2 h-[460px] overflow-hidden relative">
       <figure className='relative'>
         <img src={photoUrl} alt="image"  className='card_img image-full w-full h-full  sm:min-w-[300px] md:min-w-[345px] lg:min-w-[360px]   max-height-70 object-cover !brightness-35 '/>
       </figure>
