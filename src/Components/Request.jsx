@@ -39,8 +39,8 @@ let handleRequests=async (status,id)=>{
 // if it is post request the you should pass {}(empty array if we are not passing any kind of data to backend also) after passing link
 
   return requestData ? (
-    <div className="relative flex flex-col body-bg over_height sm:px-3">
-      <main className="flex  justify-center px-10 pt-2">
+    <div className="relative flex flex-col body-bg over_height">
+      <main className="flex  justify-center  px-4 sm:px-6 md:px-10 pt-2 pt-2">
         <div className="flex  max-w-[960px] flex-col">
           <div className="flex flex-wrap justify-between gap-3 p-4">
             <p className="text-white text-[24px] font-bold your_connections"> Requests Recieved</p>
