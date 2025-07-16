@@ -48,7 +48,7 @@ useEffect(()=>{
             const _id=x._id
             // this is the connection request_id we have to send in api
             return(
-             <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-5 lg:px-8 w-full body-bg py-4 sm:py-5 mb-3 for_down_border " key={x._id}>
+             <div className="flex items-center gap-1 sm:gap-1 px-3 sm:px-5 lg:px-8 w-full body-bg py-4 sm:py-5 mb-3 for_down_border " key={x._id}>
               <div className="rounded-full h-25 w-18 min-width-18 overflow-hidden  background_img_connec ">
                 <img src={photoUrl} alt="" className=" rounded-full  w-full h-full min-width-18 object-cover"/>
               </div>
