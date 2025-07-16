@@ -52,15 +52,22 @@ const EditProfile = () => {
       return;
     }
         const res=await axios.patch("https://devtinder-tjp2.onrender.com/profile/edit",{
-        firstName,lastName,role,age,gender,about,photoUrl:image,skills:skillsArray
+        firstName,
+        lastName,
+        role,
+        age:age && !isNaN(age) ? parseInt(age) : undefined,
+        gender,
+        about,
+        photoUrl:image,
+        skills:skillsArray
     },{withCredentials:true})
     // console.log(res.data.data)
-    dispatch(addUser(res.data.data))
+    dispatch(addUser(res?.data?.data))
     navigate("/devTinder/profile")
     }
     catch(err){
         setError(true)
-        console.log("Error",err.message)
+        console.log("Error", err.response?.data || err.message);
     }
     finally{
       setUpdating(false);

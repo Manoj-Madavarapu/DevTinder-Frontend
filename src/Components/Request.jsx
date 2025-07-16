@@ -1,10 +1,11 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addRequest, removeRequest } from '../utils/requestStore'
 import { useNavigate } from 'react-router-dom'
 
 const Request = () => {
+  let [loadingId,setLoadingId]=useState(null);
   let requestData=useSelector(store=>store.request)
   console.log(requestData);
   let dispatch=useDispatch();
@@ -27,12 +28,16 @@ useEffect(()=>{
  
 // this is used to reject or accept the recieved requests
 let handleRequests=async (status,id)=>{
+  setLoadingId(id);
     try{
     let res=await axios.post("https://devtinder-tjp2.onrender.com/request/review/"+status+"/"+id,{},{withCredentials:true});
     dispatch(removeRequest(id))
     }
     catch(err){
         console.log(err)
+    }
+    finally{
+      setLoadingId(null);
     }
     // console.log("inthjdbh"+res.data)
 }
@@ -64,8 +69,8 @@ let handleRequests=async (status,id)=>{
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{age} {age && "years old"}  {gender && " | "} {gender}</p>
               </div>
               <div className='b-none ml-auto flex flex-wrap gap-2 lg:gap-0'>
-                <button className="btn sucess_btn mr-2 hover:brightness-80" onClick={()=>handleRequests("accepted",_id)}>Accept</button>
-                <button className="btn reject_btn hover:brightness-90 " onClick={()=>handleRequests("rejected",_id)}>Reject</button>
+                <button className="btn sucess_btn mr-2 hover:brightness-80" onClick={()=>handleRequests("accepted",_id)}>{loadingId===x._id?"wait...":"Accept"}</button>
+                <button className="btn reject_btn hover:brightness-90 " onClick={()=>handleRequests("rejected",_id)}>{loadingId===_id?"wait...":"Reject"}</button>
               </div>
             </div>)
             }))}
