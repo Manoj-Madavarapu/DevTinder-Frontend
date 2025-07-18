@@ -82,8 +82,8 @@ const EditProfile = () => {
       <h1 className="text-3xl font-bold my-1 edit_profile_title text-white">Edit Profile</h1>
       <div className="flex flex-wrap justify-center gap-3 lg:gap-20 md:gap-10 edit_div px-3">
         <div className="w-85 md:w-80 lg:w-80 edit_color_div">
-          <label className="fieldset-legend text-white">First Name</label>
-          <input id="firstName" type="text" value={firstName} className="input w-full text-white" placeholder="First Name" 
+          <label className="fieldset-legend">First Name</label>
+          <input id="firstName" type="text" value={firstName} className="input w-full" placeholder="First Name" 
           onChange={(e)=>setFirstName(e.target.value)}/>
 
           <label className="fieldset-legend ">Last Name</label>

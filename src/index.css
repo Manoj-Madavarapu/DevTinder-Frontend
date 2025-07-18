@@ -613,6 +613,6 @@
   scrollbar-width: none;   
 }
 
-.edit_color_div label, input, select, textarea{
+.edit_color_div label, .edit_color_div input,.edit_color_div select,.edit_color_div textarea{
     color: white ;
 }
