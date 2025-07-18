@@ -20,18 +20,24 @@ const Login = () => {
   let handleLogin=async ()=>{
     try{
       setLoading(true);
+
+      let showAlert=setTimeout(()=>{
+        alert("⏳ Connecting to server... Please wait this may take up to a 10-30 seconds on first load.")
+      },3000)
       const res= await axios.post("https://devtinder-tjp2.onrender.com/login",{
         // email:email  // this is the same as above line
         email,
         password,
       },{withCredentials:true})
       // console.log(res.data)
+      clearTimeout(showAlert)
       dispatch(addUser(res.data))
       // here if we are making a call to another doamin then you will get CORS error to avoid this install cors(npm i cors) in backend and call the cors() middleare in your backend (app.js) file
       // remember to pass the withCredentials:true to get the cookie in browser
       navigate("/devTinder/feed");
     }
     catch(err){
+      clearTimeout(showAlert);
       // setError(err.response.data)
       // console.error("Login failed:", err);
       const errorMsg = err.response?.data || "Something went wrong!";
@@ -64,7 +70,7 @@ const Login = () => {
                   </div>
                   <p className="label text-red-500 -mt-5 mb-2">{error}</p>
                 </fieldset>
-                <button className="btn font-bold login w-full sm:w-auto" onClick={handleLogin}>{loading? "Please wait...":"Login"}</button>
+                <button className="btn font-bold login w-full sm:w-auto" onClick={handleLogin} disabled={loading}>{loading? "Please wait...":"Login"}</button>
                 <p className='mt-2'>Don't have an Account? <span className='underline font-bold text-blue-500 cursor-pointer' onClick={()=>navigate("/devTinder/sign-up")}> Sign Up</span></p>
               </div>
         </div>
