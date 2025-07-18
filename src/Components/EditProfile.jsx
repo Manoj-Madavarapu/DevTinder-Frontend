@@ -86,11 +86,11 @@ const EditProfile = () => {
           <input id="firstName" type="text" value={firstName} className="input w-full text-white" placeholder="First Name" 
           onChange={(e)=>setFirstName(e.target.value)}/>
 
-          <label className="fieldset-legend text-white">Last Name</label>
-          <input id="lastName" type="text" value={lastName} className="input w-full text-white" placeholder="Last Name" onChange={(e)=>setLastName(e.target.value)}/>
+          <label className="fieldset-legend ">Last Name</label>
+          <input id="lastName" type="text" value={lastName} className="input w-full " placeholder="Last Name" onChange={(e)=>setLastName(e.target.value)}/>
 
           <label className="fieldset-legend text-white">Role</label>
-          <input id="role" type="text" value={role}className="input w-full text-white" placeholder="Enter your Role" onChange={(e)=>setRole(e.target.value)}/>
+          <input id="role" type="text" value={role}className="input w-full " placeholder="Enter your Role" onChange={(e)=>setRole(e.target.value)}/>
 
           <label className="fieldset-legend">Age</label>
           <input  type="number" value={age} className="input w-full" placeholder="Enter your age" onChange={(e)=>setAge(e.target.value)}/>
