@@ -77,7 +77,7 @@ const SignUp = () => {
                   </select>
                   {error && <p className="text-red-500 -my-2 pr-2 ">{error}</p>}
                 </fieldset>
-                <button className="btn font-bold login w-full sm:w-auto mt-2" onClick={handleSignUp}>{loading ?"Please wait...":"SignUp"}</button>
+                <button className="btn font-bold login w-full sm:w-auto mt-2 text-white" onClick={handleSignUp}>{loading ?"Please wait...":"SignUp"}</button>
                 <p className='mt-1'>Already have an Account? <span className='underline font-bold text-blue-500 cursor-pointer' onClick={()=>navigate("/devTinder/login")}>Login</span></p>
               </div>
         </div>

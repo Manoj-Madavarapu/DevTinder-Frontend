@@ -71,7 +71,7 @@ const Login = () => {
                   </div>
                   <p className="label text-red-500 -mt-5 mb-2">{error}</p>
                 </fieldset>
-                <button className="btn font-bold login w-full sm:w-auto" onClick={handleLogin} disabled={loading}>{loading? "Please wait...":"Login"}</button>
+                <button className="btn font-bold login w-full sm:w-auto text-white" onClick={handleLogin} disabled={loading}>{loading? "Please wait...":"Login"}</button>
                 <p className='mt-2 '>Don't have an Account? <span className='underline font-bold text-blue-500 cursor-pointer' onClick={()=>navigate("/devTinder/sign-up")}> Sign Up</span></p>
               </div>
         </div>
