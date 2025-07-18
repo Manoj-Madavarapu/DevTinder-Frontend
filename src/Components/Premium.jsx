@@ -134,7 +134,7 @@ const Premium = () => {
             )
             : 
             <>
-            <h2 className="text-[22px] font-bold tracking-[-0.015em] px-4 pt-2 pb-3">{premiumUser?.membershipType==="Pro"?"Upgrade to VIP":"Choose Your Plan"}</h2>
+            <h2 className="text-[22px] font-bold tracking-[-0.015em] px-4 pt-2 pb-3 !text-white">{premiumUser?.membershipType==="Pro"?"Upgrade to VIP":"Choose Your Plan"}</h2>
             <div className="flex justify-center min-w-250px gap-4 px-4 py-3 pb-10">
               {
               plansToShow.map((plan, index) => (

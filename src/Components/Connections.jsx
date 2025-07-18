@@ -63,9 +63,8 @@ useEffect(()=>{
                 <p className="text-[#9dacb8] text-sm font-normal leading-normal line-clamp-2">{x?.age} {x?.age && "years old"}  {x?.gender && "| "}{x?.gender}</p>
               </div>
              <div className="relative lg:right-10  top-1 lg:top-2 tooltip cursor-pointer" data-tip="Chat" 
-             onClick={()=>navigate(`/devTinder/Chating/${x._id}`,{state:x})}
-             >
-              <i className="fa-solid fa-message"></i>
+             onClick={()=>navigate(`/devTinder/Chating/${x._id}`,{state:x})}>
+              <i className="fa-solid fa-message !text-white"></i>
              </div>
             </div>
             

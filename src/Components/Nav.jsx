@@ -102,14 +102,14 @@ let Nav=({premiumUser})=>{
           </div>
           {user && <div className="flex justify-center items-center gap-1 lg:gap-5">
             {!isMobile && <div className="flex justify-center items-center text-[18px] font-bold gap-10 mt-2 cursor-pointer nav_items      hidden md:flex justify-center items-center text-sm md:text-[18px] font-bold gap-5 md:gap-10 mt-2 cursor-pointer nav_items flex-wrap z-100">
-              <Link to="/devTinder/feed"> <p className="">Feed</p></Link>
-              <Link to="/devTinder/connections"><p className="">Connections</p></Link>
-              <Link to="/devTinder/requests-recieved"><p className="mr-5 indicator z-10">Requests
+              <Link to="/devTinder/feed"> <p className="!text-white">Feed</p></Link>
+              <Link to="/devTinder/connections"><p className="!text-white">Connections</p></Link>
+              <Link to="/devTinder/requests-recieved"><p className="mr-5 indicator z-10 !text-white">Requests
                 {requestData && requestData?.length!==0 && <span className="indicator-item badge ">{requestData?.length}</span>}
               </p></Link>
             </div>}
             <div className=" text-center z-100 search_box cursor-pointer relative mt-2" ref={searchBoxRef}>
-              <input type="text" placeholder="Search" className="input w-28 lg:24 md:w-auto mr-2 border-none outline-none font-bold rounded-3xl pl-4" 
+              <input type="text" placeholder="Search" className="input w-28 lg:24 md:w-auto mr-2 border-none outline-none font-bold rounded-3xl pl-4 !text-white" 
               onChange={(e)=>setInputValue(e.target.value)}
               onKeyUp={handleSearchData}
               value={inputValue}
@@ -139,27 +139,27 @@ let Nav=({premiumUser})=>{
                 className="menu menu-sm dropdown-content bg-orange-600 rounded-box  mt-3 lg:w-52  md:w-40 sm:w-35 lg:p-2 shadow shadow-drop font-bold">
                 {isMobile&&
                 <li>
-                   <Link to="/devTinder/feed"> <p className="text-white">Feed</p></Link>
-                   <Link to="/devTinder/connections"><p className="text-white">Connections</p></Link>
-                   <Link to="/devTinder/requests-recieved"><p className="mr-5 indicator z-10 text-white">Requests
+                   <Link to="/devTinder/feed"> <p className="!text-white">Feed</p></Link>
+                   <Link to="/devTinder/connections"><p className="!text-white">Connections</p></Link>
+                   <Link to="/devTinder/requests-recieved"><p className="mr-5 indicator z-10 !text-white">Requests
                 {requestData && requestData?.length!==0 && <span className="indicator-item badge ">{requestData?.length}</span>}
               </p></Link>
                 </li>
                 
                 }
                 <li>
-                  <Link to="/devTinder/profile" className="justify-between">
+                  <Link to="/devTinder/profile" className="justify-between !text-white">
                     Profile
                   </Link>
                 </li>
-                <li> <Link to="/devTinder/Connection-requests/send">
+                <li> <Link to="/devTinder/Connection-requests/send" className="!text-white">
                      Request's Send
                   </Link></li>
-                <li> <Link to="/devTinder/Premium-membership">
+                <li> <Link to="/devTinder/Premium-membership" className="!text-white">
                     Premium Membership
                     {premiumUser?.isPremium && <span className="bg-green-500 w-5 h-5 rounded-full flex m-auto justify-center items-center"><i className="fa-solid fa-check font-bold"></i></span>}
                   </Link></li>
-                <li><a onClick={handleLogout}>{loading ?"Loging out...":"Logout"}</a></li>
+                <li><a onClick={handleLogout} className="!text-white">{loading ?"Loging out...":"Logout"}</a></li>
               </ul>
             </div>
           </div>}

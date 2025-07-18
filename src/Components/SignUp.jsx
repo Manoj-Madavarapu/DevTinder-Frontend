@@ -22,6 +22,10 @@ const SignUp = () => {
     setError("");
     setLoading(true);
     try{
+       var showAlert=setTimeout(()=>{
+        alert("⏳ Connecting to server... Please wait this may take up to a 10-30 seconds on first load.")
+      },3000)
+
       const res= await axios.post("https://devtinder-tjp2.onrender.com/signup",{
         firstName,
         lastName,
@@ -30,10 +34,12 @@ const SignUp = () => {
         gender
       },{withCredentials:true})
       // console.log(res.data)
+      clearTimeout(showAlert)
       dispatch(addUser(res.data))
       navigate("/devTinder/profile");
     }
     catch(err){
+      clearTimeout(showAlert);
       if(err.response.data.includes("Error E11000 duplicate key error")){
       setError("Account already existed with this email.")
       }
