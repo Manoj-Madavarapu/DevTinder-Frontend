@@ -614,5 +614,5 @@
 }
 
 .edit_color_div label, input, select, textarea{
-    color: white !important;
+    color: white ;
 }

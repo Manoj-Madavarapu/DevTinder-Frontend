@@ -96,7 +96,7 @@ const EditProfile = () => {
           <input  type="number" value={age} className="input w-full" placeholder="Enter your age" onChange={(e)=>setAge(e.target.value)}/>
         </div>
 
-        <div className="w-85 md:w-80 lg:w-80">
+        <div className="w-85 md:w-80 lg:w-80 edit_color_div">
           <label className="fieldset-legend">Gender</label>
           <select className=" select select_edit w-full cursor-pointer" onChange={(e)=>setGender(e.target.value)} >
             <option >{gender? gender: "Select your gender" }</option>
