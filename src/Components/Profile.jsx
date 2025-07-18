@@ -31,7 +31,7 @@ const Profile = () => {
                       {premiumUser?.isPremium && <span className="inline-flex ml-2 bg-blue-500 rounded-full p-1"><i className="fa-solid fa-check text-[12px]"></i></span>}
                     </p>
                     <p className=" text-sm lg:text-base  text_shadow font-bold !text-white">{userData.role}</p>
-                    <p className="text-sm lg:text-base truncate-3-lines font-bol  mt-1">{userData.about}</p>
+                    <p className="text-sm lg:text-base truncate-3-lines font-bol text-black mt-1">{userData.about}</p>
                   </div>
                 </div>
               </div>
