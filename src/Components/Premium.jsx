@@ -41,7 +41,7 @@ const Premium = () => {
       // this below code is related to Razopay 
       const options = {
         // key: 'rzp_test_G7L8SyvJBPB7ZD',   // this key is used in test mode of razorpay
-        key:"rzp_live_Z8DXoHPzPXUtGC",
+        key:"rzp_live_4ib9z5kixk9xTz",
         // this key is the key id which you get from Razorpay accounts and settings(the same you use in instance of backend code) 
         amount,
         currency,
