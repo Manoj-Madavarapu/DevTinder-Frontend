@@ -35,7 +35,8 @@ const Premium = () => {
       console.log(order.data)
       setSelectedPlan(membershipType)
 
-      const {amount,currency,orderId,notes}=order.data
+      // const {amount,currency,orderId,notes}=order.data
+      const {amount,currency,id,notes}=order.data
       
       // this below code is related to Razopay 
       const options = {
@@ -46,7 +47,7 @@ const Premium = () => {
         currency,
         name: 'DevTinder',
         description: `DevTinder's ${membershipType} Plan`,
-        order_id: orderId,
+        order_id: id,
         handler: function (response) {
           alert('Payment successful!');
           isPremiumUser()
